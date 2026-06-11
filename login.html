@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acceso · LATAM ConsultUs</title>
+<link rel="stylesheet" href="assets/portal.css">
+</head>
+<body>
+
+<div class="login-shell">
+
+  <!-- LEFT: aurora navy -->
+  <aside class="login-left aurora-bg">
+    <div class="aurora-glow"></div>
+    <div class="aurora-grid"></div>
+    <div class="aurora-dots"></div>
+
+    <!-- decorative trending line -->
+    <svg class="login-trend" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="loginLineGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#7cabd6" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#7cabd6" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="#d9e6f2" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <path d="M 0 360 L 80 340 L 160 320 L 220 280 L 280 290 L 340 230 L 420 220 L 480 160 L 540 140 L 600 80"
+            fill="none" stroke="url(#loginLineGrad)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="600" cy="80" r="3" fill="#d9e6f2"/>
+    </svg>
+
+    <div class="logo-wrap">
+      <img src="assets/logo-white.png" alt="LATAM ConsultUs">
+    </div>
+
+    <div class="login-hero">
+      <span class="eyebrow">Portal de clientes</span>
+      <h1 style="margin-top:18px;">
+        Bienvenido al<br>
+        <strong>Portal de <span class="accent">clientes</span>.</strong>
+      </h1>
+      <hr class="accent-rule" style="margin-top:22px;">
+      <p>
+        Su mesa de análisis: portafolios, estrategias e instrumentos de inversión,
+        con criterio independiente y plazo máximo de entrega de 24 horas hábiles.
+      </p>
+    </div>
+
+    <div class="login-stats">
+      <div class="row">
+        <div class="item">
+          <div class="n">+6.500</div>
+          <div class="l">horas anuales<br>de research</div>
+        </div>
+        <div class="item">
+          <div class="n">2.760</div>
+          <div class="l">productos bajo<br>seguimiento</div>
+        </div>
+        <div class="item">
+          <div class="n">24h</div>
+          <div class="l">plazo máximo<br>de entrega</div>
+        </div>
+      </div>
+      <div class="copy">© 2026 LATAM ConsultUs<br>Montevideo, Uruguay</div>
+    </div>
+  </aside>
+
+  <!-- RIGHT: form -->
+  <section class="login-right">
+    <div class="login-form">
+      <span class="eyebrow muted">Acceso seguro</span>
+      <h2>Ingrese a su <strong>cuenta</strong></h2>
+      <p class="helper">Use sus credenciales corporativas. Si olvidó su contraseña, contáctenos.</p>
+
+      <form id="loginForm" novalidate>
+        <div>
+          <label class="lbl" for="li-user" >Usuario o correo</label>
+          <div class="login-field">
+            <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <input id="li-user" type="email" placeholder="nombre@empresa.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div>
+          <label class="lbl" for="li-pass" >Contraseña</label>
+          <div class="login-field">
+            <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <input id="li-pass" type="password" placeholder="••••••••••" autocomplete="current-password" required>
+            <span class="trail" data-pw-toggle>Mostrar</span>
+          </div>
+        </div>
+
+        <div class="login-options">
+          <label class="check"><input type="checkbox"> Mantener sesión iniciada</label>
+          <a href="#">¿Olvidó su contraseña?</a>
+        </div>
+
+        <button type="submit" class="login-cta">
+          Ingresar al portal
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <div class="login-bottom">
+        <strong>¿Aún no es cliente?</strong> Solicite acceso al equipo comercial escribiendo a
+        <a class="mail" href="mailto:contactus@latamconsultus.com">contactus@latamconsultus.com</a>.
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="assets/portal.js"></script>
+</body>
+</html>

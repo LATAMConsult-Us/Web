@@ -1,0 +1,258 @@
+/* LATAM ConsultUs — Design Tokens (refinado)
+ * Brand: navy + celeste institucional.
+ * Neutrales tintados hacia el navy. OKLCH como source de palette,
+ * con fallback HEX para compatibilidad.
+ *
+ * NOTA (merge 2026-06-10): este es el archivo canónico de Felipe.
+ * Se añadieron únicamente los tokens de MOTION (--ease-* / --dur-*) que
+ * usa la capa de interacción nueva de portal.css, y se ajustó --fg-subtle
+ * a un valor AA-safe sobre claro (ver línea correspondiente).
+ */
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-VariableFont_wdth_wght.ttf') format('truetype-variations'),
+       url('fonts/OpenSans-VariableFont_wdth_wght.ttf') format('truetype');
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf') format('truetype-variations'),
+       url('fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf') format('truetype');
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Brand: navy ---- */
+  --lcu-navy:        oklch(0.30 0.072 250);
+  --lcu-navy-900:    oklch(0.22 0.062 252);
+  --lcu-navy-800:    oklch(0.26 0.068 251);
+  --lcu-navy-700:    oklch(0.34 0.078 250);
+  --lcu-navy-600:    oklch(0.40 0.082 248);
+
+  /* ---- Brand: sky ---- */
+  --lcu-sky:         oklch(0.61 0.094 245);   /* #4986c4 — acento: datos, gráficas, on-dark, hover, bordes */
+  --lcu-sky-ink:     oklch(0.54 0.105 245);   /* #3174a7 — variante de texto/links sobre claro (AA 4.94:1) */
+  --lcu-sky-400:     oklch(0.70 0.085 240);
+  --lcu-sky-300:     oklch(0.76 0.062 238);
+  --lcu-sky-200:     oklch(0.86 0.038 238);
+  --lcu-sky-100:     oklch(0.93 0.020 238);
+  --lcu-sky-50:      oklch(0.97 0.010 238);
+
+  /* ---- Neutrales tintados ---- */
+  --lcu-white:       oklch(0.995 0.002 250);
+  --lcu-paper:       oklch(0.985 0.004 248);
+  --lcu-mist:        oklch(0.965 0.006 246);
+  --lcu-stone:       oklch(0.928 0.008 244);
+  --lcu-line:        oklch(0.905 0.010 242);
+  --lcu-line-soft:   oklch(0.945 0.007 244);
+  --lcu-gray-3:      oklch(0.72 0.014 244);
+  --lcu-gray-4:      oklch(0.52 0.018 246);
+  --lcu-gray-5:      oklch(0.40 0.022 248);
+
+  /* Aliases legacy */
+  --lcu-gray-1: var(--lcu-line);
+  --lcu-gray-2: var(--lcu-mist);
+
+  /* ---- Semantic surfaces ---- */
+  --bg-page:         var(--lcu-mist);
+  --bg-surface:      var(--lcu-white);
+  --bg-surface-alt:  var(--lcu-paper);
+  --bg-inverse:      var(--lcu-navy);
+  --border:          var(--lcu-line);
+  --border-strong:   var(--lcu-stone);
+
+  /* ---- Semantic text ---- */
+  --fg:              var(--lcu-navy);
+  --fg-muted:        var(--lcu-gray-4);
+  --fg-subtle:       oklch(0.56 0.018 246);  /* AA-safe sobre claro (~4.6:1) para texto chico; gray-3 (0.72) queda para bordes */
+  --fg-on-dark:      var(--lcu-white);
+  --fg-on-dark-soft: oklch(0.92 0.012 240);
+  --fg-on-dark-mute: oklch(0.78 0.020 240);
+  --fg-accent:       var(--lcu-sky-ink);  /* texto de acento sobre claro; AA-safe */
+
+  /* ---- Estados ---- */
+  --ok:              oklch(0.50 0.105 158);  /* AA: ≥4.5:1 sobre --ok-bg y blanco (pills/alerts/.pos) — antes 0.55 */
+  --ok-bg:           oklch(0.96 0.038 158);
+  --ok-line:         oklch(0.86 0.060 158);
+
+  --warn:            oklch(0.58 0.11 78);
+  --warn-bg:         oklch(0.97 0.060 86);
+  --warn-line:       oklch(0.85 0.080 80);
+
+  --danger:          oklch(0.56 0.18 27);
+  --danger-bg:       oklch(0.96 0.040 27);
+
+  /* ---- Data viz ---- */
+  --data-1: var(--lcu-navy);
+  --data-2: var(--lcu-navy-600);
+  --data-3: var(--lcu-sky);
+  --data-4: var(--lcu-sky-300);
+  --data-5: var(--lcu-sky-200);
+  --data-6: var(--lcu-gray-3);
+
+  /* ---- Brand gradients (uso restringido) ---- */
+  --grad-navy:       linear-gradient(135deg, oklch(0.22 0.062 252) 0%, oklch(0.30 0.072 250) 50%, oklch(0.36 0.078 249) 100%);
+  --grad-navy-deep:  linear-gradient(160deg, oklch(0.18 0.058 254) 0%, oklch(0.28 0.070 251) 60%, oklch(0.34 0.078 250) 100%);
+  --grad-cta:        linear-gradient(180deg, oklch(0.34 0.078 250) 0%, oklch(0.27 0.068 251) 100%);
+
+  /* ---- Type ---- */
+  --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+
+  /* Type scale */
+  --fs-display: 72px;
+  --fs-h1: 38px;
+  --fs-h2: 26px;
+  --fs-h3: 18px;
+  --fs-h4: 15px;
+  --fs-body: 14px;
+  --fs-small: 12px;
+  --fs-xs: 10.5px;
+
+  /* Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+  --fw-extrabold: 800;
+
+  /* Line height */
+  --lh-tight: 1.08;
+  --lh-snug: 1.22;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  /* Letter spacing */
+  --ls-tightest: -0.035em;
+  --ls-tight: -0.018em;
+  --ls-normal: 0;
+  --ls-wide: 0.06em;
+  --ls-wider: 0.18em;
+
+  /* ---- Spacing ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ---- Radii ---- */
+  --r-xs: 3px;
+  --r-sm: 5px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+  --r-pill: 999px;
+
+  /* ---- Shadows / elevation ---- */
+  --shadow-1: 0 1px 2px rgba(8,31,55,.05);
+  --shadow-2: 0 4px 14px rgba(8,31,55,.07), 0 1px 2px rgba(8,31,55,.04);
+  --shadow-3: 0 14px 38px rgba(8,31,55,.12), 0 3px 8px rgba(8,31,55,.05);
+  --shadow-pop: 0 22px 60px rgba(8,31,55,.18), 0 6px 14px rgba(8,31,55,.06);
+  --inset-line: inset 0 -1px 0 var(--border);
+
+  /* ---- Focus ring ---- */
+  --focus-ring: 0 0 0 3px oklch(0.61 0.094 245 / 0.22);
+
+  /* ---- Motion (añadido: curvas y duraciones para la capa de interacción
+     de portal.css — feedback al presionar, hover, foco). ---- */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-fast:  140ms;
+  --dur-base:  200ms;
+  --dur-slow:  280ms;
+}
+
+/* ---- Base ---- */
+html, body {
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--bg-page);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Semantic typography ---- */
+.lcu-display {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tightest);
+  color: var(--fg);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.lcu-h1 {
+  font-weight: var(--fw-light);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.lcu-h1 strong, .lcu-h1 b { font-weight: var(--fw-bold); }
+
+.lcu-h2 {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+}
+.lcu-h3 {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+}
+.lcu-eyebrow {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+.lcu-body { font-size: var(--fs-body); line-height: var(--lh-loose); }
+.lcu-small { font-size: var(--fs-small); color: var(--fg-muted); }
+.lcu-disclaimer {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-loose);
+  color: var(--fg-muted);
+}
+.lcu-num-big {
+  font-weight: var(--fw-light);
+  font-size: 88px;
+  line-height: 1;
+  letter-spacing: var(--ls-tightest);
+  color: var(--fg);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.lcu-num-big .unit {
+  font-size: 0.32em;
+  vertical-align: super;
+  margin-left: 4px;
+  color: var(--fg-accent);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-normal);
+}
+
+/* utility */
+.lcu-bg-navy { background: var(--lcu-navy); color: var(--fg-on-dark); }
+.lcu-bg-grad-navy { background: var(--grad-navy); color: var(--fg-on-dark); }
+.lcu-bg-grad-navy-deep { background: var(--grad-navy-deep); color: var(--fg-on-dark); }
+.lcu-bg-soft { background: var(--lcu-mist); }
+.lcu-rule { height: 1px; background: var(--border); border: 0; margin: 0; }
+.lcu-rule-accent { height: 2px; width: 40px; background: var(--lcu-sky); border: 0; margin: 0; }
+.lcu-num { font-variant-numeric: tabular-nums lining-nums; }
