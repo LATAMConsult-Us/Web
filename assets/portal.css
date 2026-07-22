@@ -1088,3 +1088,49 @@ a:focus-visible {
   .icon-btn:active, .access-card:active, .doc-link:active, .sidebar-item:active { transform: none !important; }
   html { scroll-behavior: auto !important; }
 }
+
+/* ---------- user menu (dropdown con acceso a ABM) ---------- */
+.user-menu { position: relative; }
+button.user-chip {
+  background: transparent; border: 0; font: inherit; cursor: pointer;
+  padding: 4px 6px; border-radius: var(--r-sm);
+  transition: background .14s;
+}
+button.user-chip:hover { background: var(--lcu-mist); }
+.user-chip .caret { color: var(--fg-muted); margin-left: 2px; transition: transform .16s; }
+.user-menu.open .user-chip .caret { transform: rotate(180deg); }
+.user-dropdown {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  min-width: 240px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-3);
+  padding: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity .14s, transform .14s, visibility .14s;
+  z-index: 40;
+}
+.user-menu.open .user-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.user-dropdown-label {
+  font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--fg-muted); font-weight: var(--fw-bold);
+  padding: 8px 10px 6px;
+}
+.user-dropdown-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: var(--r-sm);
+  color: var(--fg); font-size: 12.5px; font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+.user-dropdown-item:hover { background: var(--lcu-sky-50); color: var(--lcu-navy); text-decoration: none; }
+.user-dropdown-item svg { flex: 0 0 16px; color: var(--fg-muted); }
+.user-dropdown-item:hover svg { color: var(--lcu-sky-ink); }
+.user-dropdown-sep { height: 1px; background: var(--border); margin: 4px 6px; }
+
+/* ---------- pills por clase de activo (Biblioteca / ABM) ---------- */
+.pill-bonos     { background: #faf1e3; color: #a86a12; }  /* naranja */
+.pill-acciones  { background: #e6f5ee; color: #0f7d52; }  /* verde */
+.pill-etfs      { background: #eaf2fa; color: #2f6ea6; }  /* azul */
+.pill-fondos    { background: #efebf9; color: #5f49a6; }  /* violeta */
+.pill-privados  { background: #eceef2; color: #3a4a5c; }  /* pizarra */

@@ -73,6 +73,31 @@
     });
   });
 
+  // user menu (dropdown con acceso a ABM)
+  var userMenu = document.getElementById('userMenu');
+  if (userMenu) {
+    var chip = userMenu.querySelector('.user-chip');
+    if (chip) {
+      chip.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = userMenu.classList.toggle('open');
+        chip.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', function (e) {
+        if (!userMenu.contains(e.target)) {
+          userMenu.classList.remove('open');
+          chip.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          userMenu.classList.remove('open');
+          chip.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  }
+
   // login submit goes to inicio.html
   var lf = document.getElementById('loginForm');
   if (lf) lf.addEventListener('submit', function (e) {
