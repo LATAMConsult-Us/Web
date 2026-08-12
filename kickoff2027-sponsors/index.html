@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kick Off 2027 · Propuesta de sponsors — LATAM ConsultUs</title>
-<meta name="description" content="Propuesta oficial de patrocinio del Kick Off Punta del Este 2027 de LATAM ConsultUs: formatos, categorías Diamond, Platinum, Gold y Silver, agenda y trayectoria 2018–2026. 24–26 de febrero, Solanas Vacation Club.">
+<title>Kick Off 2027 · Propuesta de sponsors · LATAM ConsultUs</title>
+<meta name="description" content="Propuesta oficial de patrocinio del Kick Off Punta del Este 2027 de LATAM ConsultUs: formatos, categorías Diamond, Platinum, Gold y Silver, agenda y trayectoria 2018–2026. 23–25 de febrero, Punta del Este.">
 <meta name="author" content="LATAM ConsultUs">
 <meta name="theme-color" content="#08080c">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="ko27-brand/logos/ko27-monogram.png" type="image/png">
+<link rel="icon" href="ko27-brand/logos/ko27-monogram-color.png" type="image/png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kick Off 2027 · Propuesta de sponsors — LATAM ConsultUs">
-<meta property="og:description" content="Donde la industria de gestión patrimonial de América Latina se transforma. 24–26 de febrero de 2027, Solanas Vacation Club, Punta del Este.">
+<meta property="og:title" content="Kick Off 2027 · Propuesta de sponsors · LATAM ConsultUs">
+<meta property="og:description" content="Juntos proyectamos el futuro. 23–25 de febrero de 2027, Punta del Este, Uruguay.">
 <meta property="og:image" content="media/2026/stage-wide.jpg">
 <meta property="og:locale" content="es_UY">
 <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +122,10 @@
   }
   .langtoggle button.active{ background:#fff; color:var(--ko-ink-900); }
   .langtoggle button:active{ transform:scale(.92); }
+  /* Flipped look while floating over the white Categorías section */
+  .langtoggle.on-light{ background:rgba(255,255,255,.82); border-color:rgba(11,11,18,.12); box-shadow:0 16px 40px rgba(20,20,40,.18); }
+  .langtoggle.on-light button{ color:rgba(11,11,18,.6); }
+  .langtoggle.on-light button.active{ background:var(--ko-ink-900); color:#fff; }
 
   /* ---------- Gradient surface (the real supplied mesh renders) ---------- */
   .surface{ position:relative; overflow:hidden; background:var(--ko-black); }
@@ -391,7 +395,7 @@
   .plan-flag{ position:absolute; top:-11px; left:var(--space-6);
     padding:4px 12px; border-radius:var(--radius-pill);
     font-size:10px; font-weight:var(--fw-bold); letter-spacing:.14em; text-transform:uppercase;
-    color:var(--ko-ink-900); background:var(--rule-spectrum); white-space:nowrap; }
+    color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.35); background:var(--rule-spectrum); white-space:nowrap; }
   .plan header{ padding-bottom:var(--space-4); margin-bottom:var(--space-4); border-bottom:1px solid var(--border-hairline); }
   .plan .plan-dot{ display:block; width:9px; height:9px; border-radius:50%; margin-bottom:var(--space-3); }
   .plan-diamond .plan-dot{ background:var(--ko-sky); box-shadow:0 0 12px rgba(74,163,238,.85); }
@@ -421,6 +425,44 @@
   .guidelines h4{ font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--text-muted); font-weight:var(--fw-semibold); margin-bottom:var(--space-2); }
   .guidelines p{ font-size:14px; color:var(--text-secondary); line-height:1.6; }
   @media (max-width:700px){ .guidelines{ grid-template-columns:1fr; } }
+
+  /* ---------- Categorías: the one light section — white ground, multicolour hue, to make it pop ---------- */
+  #categorias{
+    background:
+      radial-gradient(circle at 12% 15%, rgba(11,92,219,.14), transparent 42%),
+      radial-gradient(circle at 88% 12%, rgba(161,53,220,.14), transparent 42%),
+      radial-gradient(circle at 85% 85%, rgba(241,135,33,.12), transparent 42%),
+      radial-gradient(circle at 15% 90%, rgba(74,163,238,.12), transparent 42%),
+      #ffffff;
+  }
+  #categorias .eyebrow{ color:rgba(11,11,18,.55); }
+  #categorias .sec-head h2{ color:#0b0b12; }
+  #categorias .sec-head p{ color:rgba(11,11,18,.68); }
+  #categorias .plan{
+    background:linear-gradient(168deg, rgba(255,255,255,.92), rgba(244,244,250,.96));
+    box-shadow:inset 0 0 0 1px rgba(11,11,18,.10), 0 10px 30px rgba(20,20,40,.08);
+    backdrop-filter:none;
+  }
+  #categorias .plan-diamond{
+    box-shadow:inset 0 0 0 1px rgba(74,163,238,.55), 0 16px 40px rgba(74,163,238,.16);
+    background:linear-gradient(168deg, rgba(74,163,238,.10), rgba(255,255,255,.96));
+  }
+  @media (hover:hover) and (pointer:fine){
+    #categorias .plan:hover{ box-shadow:inset 0 0 0 1px rgba(11,11,18,.18), 0 16px 34px rgba(20,20,40,.12); }
+    #categorias .plan-diamond:hover{ box-shadow:inset 0 0 0 1px rgba(74,163,238,.8), 0 20px 46px rgba(74,163,238,.22); }
+  }
+  #categorias .plan h3{ color:#0b0b12; }
+  #categorias .plan-diamond h3{ color:var(--ko-blue); }
+  #categorias .plan-sub{ color:rgba(11,11,18,.65); }
+  #categorias .plan header{ border-bottom-color:rgba(11,11,18,.12); }
+  #categorias .plan-list li{ color:#1a1a26; }
+  #categorias .plan-list li.no{ color:rgba(11,11,18,.4); }
+  #categorias .plan-list li.no::before{ color:rgba(11,11,18,.35); }
+  #categorias .btn-outline{ color:#0b0b12; border-color:rgba(11,11,18,.25); }
+  #categorias .btn-outline:hover{ background:rgba(11,11,18,.06); border-color:rgba(11,11,18,.4); }
+  #categorias .tiers-note{ color:rgba(11,11,18,.6); }
+  #categorias .guidelines h4{ color:rgba(11,11,18,.5); }
+  #categorias .guidelines p{ color:rgba(11,11,18,.68); }
 
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -462,24 +504,20 @@
   .lb-nav:active{ transform:translateY(-50%) scale(.9); }
   .lb-nav.prev{ left:20px; } .lb-nav.next{ right:20px; }
 
-  .t-item{ transition:background 240ms var(--ease-standard); }
-  .t-item.flash{ animation:flashRow 1500ms var(--ease-out); }
-  @keyframes flashRow{ 0%{ background:rgba(74,163,238,0); } 18%{ background:rgba(74,163,238,.14); } 100%{ background:rgba(74,163,238,0); } }
-
-  /* ---------- Timeline ---------- */
-  .timeline{ position:relative; padding-left:56px; }
-  .timeline::before{ content:""; position:absolute; left:16px; top:4px; bottom:4px; width:1px; background:var(--border-hairline); }
-  .t-item{ position:relative; padding:var(--space-6) 0; border-bottom:1px solid var(--border-hairline); }
-  .t-item:last-child{ border-bottom:none; }
-  .t-item::before{ content:""; position:absolute; left:-44px; top:calc(var(--space-6) + 5px); width:9px; height:9px; border-radius:50%; background:var(--ko-black); border:2px solid var(--border-strong); box-sizing:border-box; }
-  .t-item.peak::before{ border-color:var(--ko-sky); background:var(--ko-sky); box-shadow:var(--glow-blue); }
-  .t-item .yr-badge{ font-size:19px; font-weight:var(--fw-light); letter-spacing:-0.01em; margin-bottom:var(--space-2); color:#fff; }
-  .t-item.peak .yr-badge{ color:var(--ko-sky); font-weight:var(--fw-semibold); }
-  .t-item h3{ font-size:16px; font-weight:var(--fw-semibold); margin-bottom:var(--space-2); color:#fff; }
-  .t-item p{ font-size:14px; line-height:1.65; color:var(--text-secondary); max-width:72ch; }
-  .t-item .quote{ margin-top:var(--space-2); font-size:13.5px; color:rgba(255,255,255,.85); font-style:italic; }
-  .t-item .quote cite{ display:block; font-style:normal; font-size:12px; color:var(--ko-sky); font-weight:var(--fw-semibold); margin-top:2px; }
-  @media (max-width:760px){ .timeline{ padding-left:32px; } .timeline::before{ left:8px; } .t-item::before{ left:-26px; } }
+  /* ---------- Trayectoria: compact milestone grid ---------- */
+  .milestones{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--space-5); }
+  .milestone{ padding:var(--space-5); border-radius:var(--radius-card); box-shadow:var(--inset-hairline);
+    transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+  .milestone .yr{ font-size:26px; font-weight:var(--fw-light); letter-spacing:-0.01em; color:#fff; margin-bottom:var(--space-2); font-variant-numeric:tabular-nums; }
+  .milestone.peak{ box-shadow:inset 0 0 0 1px rgba(74,163,238,.5), 0 18px 40px rgba(0,0,0,.32); }
+  .milestone.peak .yr{ color:var(--ko-sky); font-weight:var(--fw-semibold); }
+  .milestone h4{ font-size:13.5px; font-weight:var(--fw-semibold); margin-bottom:var(--space-1); color:#fff; line-height:1.3; }
+  .milestone p{ font-size:12.5px; line-height:1.5; color:var(--text-secondary); }
+  @media (hover:hover) and (pointer:fine){
+    .milestone:hover{ transform:translateY(-3px); box-shadow:inset 0 0 0 1px var(--border-subtle), 0 16px 36px rgba(0,0,0,.3); }
+  }
+  @media (max-width:900px){ .milestones{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:480px){ .milestones{ grid-template-columns:1fr; } }
 
   /* ---------- Testimonials ---------- */
   .quotes{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -527,21 +565,30 @@
   .sitenav{
     position:fixed; top:var(--space-5); left:50%; z-index:55;
     transform:translateX(-50%) translateY(-18px); opacity:0; pointer-events:none;
-    display:flex; align-items:center; gap:6px;
-    padding:6px 8px 6px 18px; border-radius:var(--radius-pill);
+    display:flex; align-items:center; gap:6px; overflow:hidden;
+    padding:6px 14px; border-radius:var(--radius-pill);
     border:1px solid var(--border-hairline); background:var(--surface-glass); backdrop-filter:blur(18px);
     box-shadow:0 16px 40px rgba(0,0,0,.4);
     transition:opacity 280ms var(--ease-out), transform 280ms var(--ease-out);
   }
   .sitenav.show{ transform:translateX(-50%) translateY(0); opacity:1; pointer-events:auto; }
   .sitenav .nav-mark{ height:24px; width:auto; flex:0 0 auto; margin-right:var(--space-2); }
+  .sitenav .nav-mark-light{ display:none; }
+  .sitenav.on-light .nav-mark-dark{ display:none; }
+  .sitenav.on-light .nav-mark-light{ display:block; }
   .sitenav .links{ position:relative; display:flex; gap:1px; }
-  .sitenav .links a{ position:relative; z-index:1; font-size:12.5px; font-weight:var(--fw-semibold); letter-spacing:.02em; color:var(--text-secondary); padding:8px 14px; border-radius:var(--radius-pill); white-space:nowrap; transition:color var(--dur-fast) var(--ease-standard); }
+  .sitenav .links a{ position:relative; z-index:1; font-size:12.5px; font-weight:var(--fw-semibold); letter-spacing:.02em; color:var(--text-secondary); padding:7px 11px; border-radius:var(--radius-pill); white-space:nowrap; transition:color var(--dur-fast) var(--ease-standard); }
   .sitenav .links a:hover{ color:#fff; }
   .sitenav .links a.active{ color:var(--ko-ink-900); }
   .sitenav .indicator{ position:absolute; top:0; left:0; height:100%; width:0; border-radius:var(--radius-pill); background:#fff; transition:transform 320ms var(--ease-out), width 320ms var(--ease-out), opacity 200ms var(--ease-out); opacity:0; z-index:0; }
   .sitenav .indicator.show{ opacity:1; }
-  .sitenav .cta{ font-size:12px; font-weight:var(--fw-semibold); padding:9px 18px; margin-left:4px; }
+  .sitenav .cta{ font-size:12.5px; font-weight:var(--fw-semibold); padding:8px 16px; margin-left:4px; }
+  /* Flipped look while floating over the white Categorías section */
+  .sitenav.on-light{ background:rgba(255,255,255,.82); border-color:rgba(11,11,18,.12); box-shadow:0 16px 40px rgba(20,20,40,.18); }
+  .sitenav.on-light .links a{ color:rgba(11,11,18,.6); }
+  .sitenav.on-light .links a:hover{ color:#0b0b12; }
+  .sitenav.on-light .links a.active{ color:#0b0b12; }
+  .sitenav.on-light .indicator{ background:rgba(11,11,18,.08); }
   @media (max-width:900px){ .sitenav{ display:none; } }
   @media (prefers-reduced-motion:reduce){ .sitenav{ transition:opacity 160ms ease; } }
 
@@ -630,7 +677,7 @@
     mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
   .marquee-track{ display:flex; width:max-content; animation:marquee-l 70s linear infinite; will-change:transform; }
   .marquee.reverse .marquee-track{ animation-name:marquee-r; animation-duration:82s; }
-  .marquee figure{ margin:0 14px 0 0; position:relative; flex:0 0 auto;
+  .marquee figure{ margin:0 14px 0 0; position:relative; flex:0 0 auto; cursor:pointer;
     width:330px; height:210px; border-radius:var(--radius-lg); overflow:hidden;
     box-shadow:var(--inset-hairline); }
   .marquee img{ width:100%; height:100%; object-fit:cover; display:block;
@@ -723,7 +770,7 @@
   .day:nth-child(3) .row .t{ color:var(--ko-orange); }
 
   /* Give the cards a real surface so they read against the moving colour field. */
-  .principle, .fmt, .opp, .qcard, .day{
+  .principle, .fmt, .opp, .qcard, .day, .milestone{
     background:linear-gradient(168deg, rgba(255,255,255,.055), rgba(8,8,12,.5));
     backdrop-filter:blur(6px);
   }
@@ -791,7 +838,7 @@
   /* ---------- Venues: Solanas + Convention Centre ---------- */
   .venue-intro{ max-width:60ch; margin-bottom:var(--space-12); font-size:16.5px; line-height:1.7; color:var(--text-secondary); }
   .venue-intro strong{ font-weight:var(--fw-semibold); color:#fff; }
-  .venues{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-6); align-items:stretch; }
+  .venues{ display:grid; grid-template-columns:1fr; gap:var(--space-8); }
   .venue{ display:flex; flex-direction:column; border-radius:var(--radius-xl); overflow:hidden;
     box-shadow:var(--inset-hairline);
     background:linear-gradient(168deg, rgba(255,255,255,.055), rgba(8,8,12,.5));
@@ -801,18 +848,18 @@
     .venue:hover{ transform:translateY(-4px); box-shadow:inset 0 0 0 1px var(--border-subtle), 0 20px 44px rgba(0,0,0,.36); }
   }
   /* One fixed strip height so both shots — and both venue cards — line up exactly. */
-  .venue-shots{ display:grid; grid-template-columns:1.55fr 1fr; gap:4px; height:250px; }
+  .venue-shots{ display:grid; grid-template-columns:1.55fr 1fr; gap:4px; height:340px; }
   .venue-shots > div{ overflow:hidden; }
   .venue-shots img{ width:100%; height:100%; object-fit:cover; display:block;
     transition:transform 640ms var(--ease-out); }
-  @media (max-width:600px){ .venue-shots{ height:190px; } }
+  @media (max-width:600px){ .venue-shots{ height:220px; } }
   @media (hover:hover) and (pointer:fine){ .venue:hover .venue-shots img{ transform:scale(1.05); } }
   .venue-body{ flex:1; padding:var(--space-6); display:flex; flex-direction:column; }
   .venue-kicker{ font-size:10.5px; font-weight:var(--fw-semibold); letter-spacing:.18em; text-transform:uppercase;
     margin-bottom:var(--space-3); color:var(--ko-sky); }
   #venueCentro .venue-kicker{ color:var(--ko-orange); }
   /* Two lines reserved for the title so the copy below starts on the same line in both cards. */
-  .venue h3{ font-size:21px; line-height:1.3; min-height:2.6em; font-weight:var(--fw-semibold); color:#fff; margin-bottom:var(--space-3); }
+  .venue h3{ font-size:21px; line-height:1.3; font-weight:var(--fw-semibold); color:#fff; margin-bottom:var(--space-3); }
   .venue p{ font-size:14.5px; line-height:1.65; color:var(--text-secondary); flex:1; margin:0; }
   .venue-facts{ display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:var(--space-5); padding-top:var(--space-4); border-top:1px solid var(--border-hairline); }
   /* Direct children only — a plain descendant selector also hits the nested language
@@ -821,7 +868,6 @@
     font-weight:var(--fw-semibold); letter-spacing:.04em;
     background:rgba(74,163,238,.13); color:var(--ko-sky); border:1px solid rgba(74,163,238,.26); }
   #venueCentro .venue-facts > span{ background:rgba(241,135,33,.13); color:var(--ko-orange); border-color:rgba(241,135,33,.3); }
-  @media (max-width:860px){ .venues{ grid-template-columns:1fr; } .venue h3{ min-height:0; } }
 
 
   /* Day 3's party gets its own emphasis in the agenda. */
@@ -871,16 +917,15 @@
 </div>
 
 <nav class="sitenav" id="siteNav" aria-label="Secciones">
-  <img class="nav-mark" src="ko27-brand/logos/ko27-monogram.png" alt="Kick Off 2027">
+  <img class="nav-mark nav-mark-dark" src="ko27-brand/logos/ko27-monogram.png" alt="Kick Off 2027">
+  <img class="nav-mark nav-mark-light" src="ko27-brand/logos/ko27-monogram-color.png" alt="Kick Off 2027">
   <div class="links" id="navLinks">
     <span class="indicator" id="navIndicator" aria-hidden="true"></span>
-    <a href="#prueba"><span class="es">Números</span><span class="en">Numbers</span></a>
     <a href="#sedes"><span class="es">Sedes</span><span class="en">Venues</span></a>
     <a href="#agenda"><span class="es">Agenda</span><span class="en">Agenda</span></a>
-    <a href="#categorias"><span class="es">Categorías</span><span class="en">Tiers</span></a>
+    <a href="#numeros"><span class="es">Números</span><span class="en">Numbers</span></a>
     <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Track record</span></a>
-    <a href="#video"><span class="es">Video</span><span class="en">Video</span></a>
-    <a href="#galeria"><span class="es">Galería</span><span class="en">Gallery</span></a>
+    <a href="#categorias"><span class="es">Categorías</span><span class="en">Tiers</span></a>
   </div>
   <a href="#contacto" class="btn btn-primary cta"><span class="es">Quiero ser sponsor</span><span class="en">Become a sponsor</span></a>
 </nav>
@@ -899,17 +944,17 @@
     <span class="logo-wrap"><img class="logo" src="ko27-brand/logos/ko27-lockup-horizontal.png" alt="Kick Off 2027 · Punta del Este"></span>
     <p class="eyebrow"><span class="es">Propuesta oficial de patrocinio</span><span class="en">Official sponsorship proposal</span></p>
     <h1>
-      <span class="es">Donde la industria de gestión patrimonial de <strong>América Latina</strong> se transforma.</span>
-      <span class="en">Where Latin America's <strong>wealth management</strong> industry transforms.</span>
+      <span class="es">Juntos proyectamos el <strong>futuro</strong>.</span>
+      <span class="en">Together, we're shaping the <strong>future</strong>.</span>
     </h1>
     <p class="lead">
-      <span class="es">Cada año, LATAM ConsultUs convoca en un mismo lugar a <strong>asesores financieros independientes, gestores de patrimonio y family offices</strong> de la región. Esta propuesta resume el formato, la trayectoria y las categorías de participación disponibles para sponsors en el <strong>Kick Off 2027</strong>.</span>
-      <span class="en">Every year, LATAM ConsultUs brings together <strong>independent financial advisors, wealth managers and family offices</strong> from across the region. This proposal summarizes the format, track record and sponsorship tiers available for <strong>Kick Off 2027</strong>.</span>
+      <span class="es">Cada año, LATAM ConsultUs convoca en un mismo lugar a asesores financieros de los principales bancos y corredores de bolsa de la región, banqueros, family offices, analistas financieros y selectores de productos de inversión junto a las gestoras de fondos mutuos, gestores de activos privados, proveedores de soluciones, productos y servicios para la industria de gestión patrimonial global. Esta propuesta resume el formato, la trayectoria y las categorías de participación disponibles para sponsors en el <strong>Kick Off Punta del Este 2027</strong>.</span>
+      <span class="en">Every year, LATAM ConsultUs brings together, in one place, financial advisors from the region's leading banks and brokerages, private bankers, family offices, financial analysts and investment product selectors, alongside mutual fund managers, private asset managers and providers of solutions, products and services for the global wealth management industry. This proposal summarizes the format, track record and sponsorship tiers available at <strong>Kick Off Punta del Este 2027</strong>.</span>
     </p>
     <dl class="meta">
-      <div><dt><span class="es">Sede</span><span class="en">Venue</span></dt><dd><span class="dd-main">Solanas Vacation Club</span><span class="dd-sub">Crystal Beach, Punta del Este</span></dd></div>
-      <div><dt><span class="es">Fecha</span><span class="en">Date</span></dt><dd><span class="dd-main"><span class="es">24–26 de febrero</span><span class="en">February 24–26</span></span><span class="dd-sub">2027</span></dd></div>
-      <div><dt><span class="es">Edición</span><span class="en">Edition</span></dt><dd><span class="dd-main"><span class="es">9ª edición</span><span class="en">9th edition</span></span><span class="dd-sub"><span class="es">la más grande hasta la fecha</span><span class="en">the largest to date</span></span></dd></div>
+      <div><dt><span class="es">Sede</span><span class="en">Venue</span></dt><dd><span class="dd-main"><span class="es">Centro de Convenciones</span><span class="en">Convention Centre</span></span><span class="dd-sub">Punta del Este, Uruguay</span></dd></div>
+      <div><dt><span class="es">Fecha</span><span class="en">Date</span></dt><dd><span class="dd-main"><span class="es">Martes 23 al jueves 25</span><span class="en">Tue 23 – Thu 25</span></span><span class="dd-sub"><span class="es">Febrero 2027</span><span class="en">February 2027</span></span></dd></div>
+      <div><dt><span class="es">Edición</span><span class="en">Edition</span></dt><dd><span class="dd-main"><span class="es">9ª edición</span><span class="en">9th edition</span></span></dd></div>
     </dl>
     <div class="ctas">
       <a href="#categorias" class="btn btn-primary"><span class="es">Ver categorías de sponsor</span><span class="en">See sponsorship tiers</span></a>
@@ -921,28 +966,142 @@
 <!-- MARQUESINA DE FOTOS 1 -->
 <div class="marquee" id="marqueeTop" aria-hidden="true"><div class="marquee-track"></div></div>
 
+<!-- SEDES: SOLANAS + CENTRO DE CONVENCIONES (sección clara) -->
+<section id="sedes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <hr class="accent">
+      <p class="eyebrow"><span class="es">Punta del Este, Uruguay</span><span class="en">Punta del Este, Uruguay</span></p>
+      <h2><span class="es">La sede y dónde nos quedamos.</span><span class="en">The venue and where we stay.</span></h2>
+    </div>
+
+    <div class="venues reveal stagger">
+      <article class="venue" id="venueCentro">
+        <div class="venue-shots">
+          <div class="vs-a"><img src="media/sedes/centro-convenciones-aerea.jpg" alt="Vista aérea del Centro de Convenciones de Punta del Este" loading="lazy" decoding="async"></div>
+          <div class="vs-b"><img src="media/sedes/centro-convenciones-noche.jpg" alt="Centro de Convenciones de Punta del Este iluminado de noche" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="venue-body">
+          <p class="venue-kicker"><span class="es">Sede oficial</span><span class="en">Official venue</span></p>
+          <h3><span class="es">Centro de Convenciones de Punta del Este</span><span class="en">Punta del Este Convention Centre</span></h3>
+          <p>
+            <span class="es">El contenido central del Kick Off (masterclasses, mesas redondas y hubs temáticos) se desarrolla en el Centro de Convenciones de Punta del Este, uno de los recintos más grandes de la región.</span>
+            <span class="en block">The core of Kick Off (masterclasses, round tables and thematic hubs) takes place at the Punta del Este Convention Centre, one of the region's largest venues.</span>
+          </p>
+          <div class="venue-facts">
+            <span>18.000 m²</span>
+            <span><span class="es">Plenaria de 2.600</span><span class="en">2,600-seat plenary</span></span>
+          </div>
+          <a class="gallery-link" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x95751ad60850c14d:0x7115e9bde17fef35?sa=X&amp;ved=1t:8290&amp;ictx=111" target="_blank" rel="noopener" style="margin-top:var(--space-4);">
+            <span class="es">Cómo llegar</span><span class="en">Get directions</span> ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="venue" id="venueSolanas">
+        <div class="venue-shots">
+          <div class="vs-a"><img src="media/sedes/solanas-laguna.jpg" alt="Laguna cristalina de Solanas Vacation Club, Punta Ballena" loading="lazy" decoding="async"></div>
+          <div class="vs-b"><img src="media/sedes/solanas-complejo.jpg" alt="Complejo de Solanas frente a la laguna" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="venue-body">
+          <p class="venue-kicker"><span class="es">Alojamiento</span><span class="en">Accommodation</span></p>
+          <h3>Solanas Vacation Club Crystal Beach</h3>
+          <p>
+            <span class="es">Los invitados se alojan en Solanas Vacation Club Crystal Beach, frente a Playa Portezuelo, entre bosque y playa. El complejo cuenta con piscinas, canchas de tenis y pádel, y espacios al aire libre para el tiempo libre entre jornadas.</span>
+            <span class="en block">Guests stay at Solanas Vacation Club Crystal Beach, facing Playa Portezuelo, between forest and beach. The complex has pools, tennis and padel courts, and outdoor spaces for downtime between sessions.</span>
+          </p>
+          <div class="venue-facts">
+            <span><span class="es">190 ha de bosque nativo</span><span class="en">190 ha of native forest</span></span>
+            <span><span class="es">4 ha de playa privada</span><span class="en">4 ha of private beach</span></span>
+          </div>
+          <a class="gallery-link" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x95751453d04634c5:0x4ef95339a862aca9?sa=X&amp;ved=1t:8290&amp;ictx=111" target="_blank" rel="noopener" style="margin-top:var(--space-4);">
+            <span class="es">Cómo llegar</span><span class="en">Get directions</span> ↗
+          </a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <hr class="accent">
+      <p class="eyebrow"><span class="es">Agenda preliminar</span><span class="en">Preliminary agenda</span></p>
+      <h2><span class="es">Tres días en Punta del Este.</span><span class="en">Three days in Punta del Este.</span></h2>
+      <p><span class="es">Así se organiza el contenido del Kick Off 2027 y dónde entra tu marca.</span><span class="en">How Kick Off 2027's content is organized and where your brand fits in.</span></p>
+    </div>
+    <div class="agenda reveal stagger">
+      <div class="day spotlight">
+        <h4><span class="es">Martes 23 de febrero</span><span class="en">Tuesday, February 23</span></h4>
+        <h3><span class="es">Día 1 · Llegada</span><span class="en">Day 1 · Arrival</span></h3>
+        <div class="row"><div class="t"><span class="es">Todo el día</span><span class="en">All day</span></div><div class="l"><span class="es">Llegada de VIPs y delegados</span><span class="en">VIP and delegate arrivals</span></div></div>
+        <div class="row"><div class="t">19:30</div><div class="l"><span class="es">Cena</span><span class="en">Dinner</span></div></div>
+      </div>
+      <div class="day spotlight">
+        <h4><span class="es">Miércoles 24 de febrero</span><span class="en">Wednesday, February 24</span></h4>
+        <h3><span class="es">Día 2 · Conferencias</span><span class="en">Day 2 · Conferences</span></h3>
+        <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Desayuno y check-in en Solanas</span><span class="en">Breakfast and check-in at Solanas</span></div></div>
+        <div class="row"><div class="t">10:00</div><div class="l"><span class="es">Llegada de participantes y registro</span><span class="en">Participant arrivals and check-in</span></div></div>
+        <div class="row"><div class="t">11:30</div><div class="l"><span class="es">Traslado al centro de convenciones y acreditación</span><span class="en">Transfer to the convention centre and accreditation</span></div></div>
+        <div class="row"><div class="t">13:00</div><div class="l"><span class="es">Almuerzo liviano</span><span class="en">Light lunch</span></div></div>
+        <div class="row"><div class="t">14:30</div><div class="l"><span class="es">Apertura</span><span class="en">Opening</span></div></div>
+        <div class="row"><div class="t">14:45</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">15:45</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">16:15</div><div class="l"><span class="es">Coffee break</span><span class="en">Coffee break</span></div></div>
+        <div class="row"><div class="t">16:30</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">17:00</div><div class="l"><span class="es">Ideas Aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">18:30</div><div class="l"><span class="es">Entrevista</span><span class="en">Interview</span></div></div>
+        <div class="row"><div class="t">20:30</div><div class="l"><span class="es">Cena en Solanas</span><span class="en">Dinner at Solanas</span></div></div>
+      </div>
+      <div class="day spotlight">
+        <h4><span class="es">Jueves 25 de febrero</span><span class="en">Thursday, February 25</span></h4>
+        <h3><span class="es">Día 3 · Cierre y fiesta</span><span class="en">Day 3 · Closing &amp; party</span></h3>
+        <div class="row"><div class="t">08:30</div><div class="l"><span class="es">Desayuno</span><span class="en">Breakfast</span></div></div>
+        <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Traslado al centro de convenciones</span><span class="en">Transfer to the convention centre</span></div></div>
+        <div class="row"><div class="t">10:00</div><div class="l"><span class="es">Apertura</span><span class="en">Opening</span></div></div>
+        <div class="row"><div class="t">10:30</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">11:00</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">11:30</div><div class="l"><span class="es">Coffee break</span><span class="en">Coffee break</span></div></div>
+        <div class="row"><div class="t">11:45</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">12:15</div><div class="l"><span class="es">Ideas Aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">13:15</div><div class="l"><span class="es">Almuerzo</span><span class="en">Lunch</span></div></div>
+        <div class="row"><div class="t">14:30</div><div class="l"><span class="es">Entrevista</span><span class="en">Interview</span></div></div>
+        <div class="row"><div class="t">15:00</div><div class="l"><span class="es">Debate</span><span class="en">Panel debate</span></div></div>
+        <div class="row"><div class="t">15:30</div><div class="l"><span class="es">Ideas Aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">16:30</div><div class="l"><span class="es">Regreso a Solanas</span><span class="en">Return to Solanas</span></div></div>
+        <div class="row"><div class="t">17:30</div><div class="l"><span class="es">Tiempo libre y actividades</span><span class="en">Free time and activities</span></div></div>
+        <div class="row is-party"><div class="t">21:00</div><div class="l"><span class="es"><strong>Party en Solanas</strong> · Crystal</span><span class="en"><strong>Party at Solanas</strong> · Crystal</span></div></div>
+      </div>
+    </div>
+    <p class="agenda-note"><span class="es">Agenda preliminar, sujeta a confirmación según el layout definitivo del predio.</span><span class="en">Preliminary agenda, subject to confirmation once the venue's final layout is set.</span></p>
+  </div>
+</section>
+
 <!-- QUÉ ES KICK OFF -->
-<section>
+<section id="antecedentes">
   <div class="wrap">
     <div class="split reveal">
       <div>
         <div class="sec-head">
           <hr class="accent">
-          <p class="eyebrow"><span class="es">Desde 2018</span><span class="en">Since 2018</span></p>
+          <p class="eyebrow"><span class="es">Antecedentes · desde 2018</span><span class="en">Background · since 2018</span></p>
           <h2><span class="es">¿Qué es el Kick Off?</span><span class="en">What is the Kick Off?</span></h2>
         </div>
         <div class="about-stack">
-          <p><span class="es">Desde 2018, el Kick Off reúne durante dos días a expertos de la industria de gestión patrimonial y mercado de capitales, como asesores financieros independientes, gestoras de activos, corredoras de bolsa y bancos de todo el mundo.</span>
-          <span class="en">Since 2018, Kick Off has brought together experts in wealth management and capital markets for two days — independent financial advisors, asset managers, brokerages and banks from around the world.</span></p>
-          <p><span class="es">A través de masterclasses, talleres y hubs temáticos se analizó y proyectó el futuro del mercado, se compartió conocimiento y se debatió en torno a temas estratégicos con expositores destacados.</span>
-          <span class="en">Through masterclasses, workshops and thematic hubs, the industry analyzed and projected the future of the market, shared knowledge and debated strategic topics with leading speakers.</span></p>
-          <p><span class="es">Un espacio que generó oportunidades de networking y donde celebramos el valor de ser independientes.</span>
-          <span class="en">A space that generated networking opportunities and where we celebrate the value of being independent.</span></p>
+          <p><span class="es">El Kick Off reúne, durante dos días, a especialistas del mundo de las inversiones y gestión patrimonial. Las principales plataformas, custodias, proveedores de servicios, productos y tecnología, se encuentran con los profesionales más destacados de la industria a nivel regional.</span>
+          <span class="en">Over two days, Kick Off brings together specialists from the investment and wealth management world. Leading platforms, custodians and providers of services, products and technology meet the industry's top regional professionals.</span></p>
+          <p><span class="es">A través de masterclasses, hubs temáticos y mesas redondas, la industria analiza y proyecta el futuro del mercado, comparte conocimiento y debate los temas estratégicos junto a expositores destacados.</span>
+          <span class="en">Through masterclasses, thematic hubs and round tables, the industry analyzes and projects the future of the market, shares knowledge and debates strategic topics alongside leading speakers.</span></p>
+          <p><span class="es">Un espacio de encuentro directo entre ambos lados de la industria, que genera oportunidades reales de negocio y celebra el valor de ser independientes.</span>
+          <span class="en">A space for direct encounters between both sides of the industry, generating real business opportunities and celebrating the value of being independent.</span></p>
         </div>
       </div>
       <div class="split-media">
         <div class="crossfade" id="cfAbout"
-             data-photos="media/2026/stage-wide.jpg,media/2026/expo-floor.jpg,media/2026/hub-thornburg.jpg,media/2026/cocktail-crowd.jpg,media/2026/execs-backdrop.jpg"
+             data-photos="media/2026/stage-wide.jpg,media/2026/expo-floor.jpg,media/2026/hub-thornburg.jpg,media/2026/auditorio-general.jpg,media/2026/auditorio-panel.jpg"
              data-alt="Kick Off Punta del Este 2026">
           <div class="cf-dots"></div>
         </div>
@@ -952,7 +1111,7 @@
 </section>
 
 <!-- KO2026 EN NÚMEROS -->
-<section id="prueba" class="photoband">
+<section id="numeros" class="photoband">
   <img class="bg" src="media/2026/stage-1.jpg" alt="" aria-hidden="true" data-parallax="0.10">
   <div class="scrim"></div>
   <div class="wrap">
@@ -970,70 +1129,66 @@
       <div class="stat"><div class="n c-magenta"><span class="cnt" data-target="25">0</span>%</div><div class="l"><span class="es">de participación femenina</span><span class="en">female participation</span></div></div>
       <div class="stat"><div class="n c-orange"><span class="cnt" data-target="36">0</span> / <span class="cnt" data-target="18">0</span></div><div class="l"><span class="es">hubs temáticos y mesas redondas</span><span class="en">thematic hubs and round tables</span></div></div>
     </div>
-    <div class="demand reveal">
-      <span class="n"><span class="cnt" data-target="563">0</span> → <span class="cnt" data-target="488">0</span></span>
-      <p><span class="es"><strong>563 profesionales invitados, 488 presentes (86%).</strong> La convocatoria se cerró antes de agotar la lista de espera.</span>
-      <span class="en"><strong>563 professionals invited, 488 attended (86%).</strong> Registration closed before the waiting list was cleared.</span></p>
-    </div>
   </div>
 </section>
 
-<!-- SEDES: SOLANAS + CENTRO DE CONVENCIONES (sección clara) -->
-<section id="sedes">
+<!-- TRAYECTORIA -->
+<section id="trayectoria">
   <div class="wrap">
     <div class="sec-head reveal">
       <hr class="accent">
-      <p class="eyebrow"><span class="es">Punta del Este, el escenario de esta edición</span><span class="en">Punta del Este, the stage for this edition</span></p>
-      <h2><span class="es">Dos sedes, una misma experiencia.</span><span class="en">Two venues, one experience.</span></h2>
+      <p class="eyebrow"><span class="es">Trayectoria</span><span class="en">Track record</span></p>
+      <h2><span class="es">Ocho ediciones de historia.</span><span class="en">Eight editions of history.</span></h2>
+      <p><span class="es">De un encuentro fundacional en 2018 a un foro regional consolidado.</span><span class="en">From a founding gathering in 2018 to an established regional forum.</span></p>
     </div>
 
-    <p class="venue-intro reveal">
-      <span class="es">Durante años, el Kick Off tuvo una misma casa. Este <strong>2027 la cambiamos</strong>, porque si le pedimos a la industria que se transforme, tenía sentido empezar por nosotros.</span>
-      <span class="en block">For years, Kick Off had one home. <strong>In 2027 we're changing it</strong> — if we're asking the industry to transform, it made sense to start with ourselves.</span>
-    </p>
-
-    <div class="venues reveal stagger">
-      <article class="venue" id="venueSolanas">
-        <div class="venue-shots">
-          <div class="vs-a"><img src="media/sedes/solanas-laguna.jpg" alt="Laguna cristalina de Solanas Vacation Club, Punta Ballena" loading="lazy" decoding="async"></div>
-          <div class="vs-b"><img src="media/sedes/solanas-complejo.jpg" alt="Complejo de Solanas frente a la laguna" loading="lazy" decoding="async"></div>
-        </div>
-        <div class="venue-body">
-          <p class="venue-kicker"><span class="es">Dónde se alojan</span><span class="en">Where guests stay</span></p>
-          <h3>Solanas · Playa Portezuelo</h3>
-          <p>
-            <span class="es">Los invitados se alojan en Solanas, frente a Playa Portezuelo, entre bosque y playa. Ahí pasa lo que no entra en la agenda formal: actividades deportivas y dinámicas de networking.</span>
-            <span class="en block">Guests stay at Solanas, facing Playa Portezuelo, between forest and beach. This is where everything that doesn't fit the formal agenda happens: sports activities and networking.</span>
-          </p>
-          <div class="venue-facts">
-            <span><span class="es">190 ha de bosque nativo</span><span class="en">190 ha of native forest</span></span>
-            <span><span class="es">4 ha de playa privada</span><span class="en">4 ha of private beach</span></span>
-            <span><span class="es">5 min del aeropuerto</span><span class="en">5 min from the airport</span></span>
-          </div>
-        </div>
-      </article>
-
-      <article class="venue" id="venueCentro">
-        <div class="venue-shots">
-          <div class="vs-a"><img src="media/sedes/centro-convenciones-aerea.jpg" alt="Vista aérea del Centro de Convenciones de Punta del Este" loading="lazy" decoding="async"></div>
-          <div class="vs-b"><img src="media/sedes/centro-convenciones-noche.jpg" alt="Centro de Convenciones de Punta del Este iluminado de noche" loading="lazy" decoding="async"></div>
-        </div>
-        <div class="venue-body">
-          <p class="venue-kicker"><span class="es">Dónde pasa el contenido</span><span class="en">Where the content happens</span></p>
-          <h3><span class="es">Centro de Convenciones de Punta del Este</span><span class="en">Punta del Este Convention Centre</span></h3>
-          <p>
-            <span class="es">El contenido central del Kick Off — masterclasses, mesas redondas y hubs temáticos — tiene como sede el Centro de Convenciones de Punta del Este. La escala que la industria se merece.</span>
-            <span class="en block">The core of Kick Off — masterclasses, round tables and thematic hubs — takes place at the Punta del Este Convention Centre. The scale the industry deserves.</span>
-          </p>
-          <div class="venue-facts">
-            <span>18.000 m²</span>
-            <span><span class="es">Capacidad 6.000 personas</span><span class="en">Capacity 6,000 people</span></span>
-            <span><span class="es">Plenaria de 2.600</span><span class="en">2,600-seat plenary</span></span>
-          </div>
-        </div>
-      </article>
+    <div class="milestones reveal stagger">
+      <div class="milestone">
+        <div class="yr">2018</div>
+        <h4><span class="es">Primera edición</span><span class="en">The first edition</span></h4>
+        <p><span class="es">Encuentro fundacional, con HSBC Uruguay y Pershing.</span><span class="en">The founding gathering, with HSBC Uruguay and Pershing.</span></p>
+      </div>
+      <div class="milestone">
+        <div class="yr">2019</div>
+        <h4><span class="es">Primeras gestoras globales</span><span class="en">First global managers</span></h4>
+        <p><span class="es">~200 asesores, 20+ gestoras internacionales.</span><span class="en">~200 advisors, 20+ international managers.</span></p>
+      </div>
+      <div class="milestone">
+        <div class="yr">2020</div>
+        <h4><span class="es">Interés turístico</span><span class="en">Touristic interest</span></h4>
+        <p><span class="es">+340 asistentes, 50+ gestoras internacionales.</span><span class="en">340+ attendees, 50+ international managers.</span></p>
+      </div>
+      <div class="milestone">
+        <div class="yr">2022</div>
+        <h4><span class="es">El regreso pospandemia</span><span class="en">The post-pandemic return</span></h4>
+        <p><span class="es">380+ asistentes, 42 gestoras internacionales.</span><span class="en">380+ attendees, 42 asset managers.</span></p>
+      </div>
+      <div class="milestone">
+        <div class="yr">2023</div>
+        <h4><span class="es">Con el presidente Luis Lacalle Pou</span><span class="en">With President Luis Lacalle Pou</span></h4>
+        <p><span class="es">400+ asistentes.</span><span class="en">400+ attendees.</span></p>
+      </div>
+      <div class="milestone">
+        <div class="yr">2024</div>
+        <h4><span class="es">Riesgo geopolítico</span><span class="en">Geopolitical risk</span></h4>
+        <p><span class="es">~300 asistentes, 35 gestoras internacionales.</span><span class="en">~300 attendees, 35 international managers.</span></p>
+      </div>
+      <div class="milestone">
+        <div class="yr">2025</div>
+        <h4><span class="es">Récord de firmas</span><span class="en">Record number of firms</span></h4>
+        <p><span class="es">~400 asistentes, 21 hubs y mesas.</span><span class="en">~400 attendees, 21 hubs and tables.</span></p>
+      </div>
+      <div class="milestone peak">
+        <div class="yr">2026</div>
+        <h4><span class="es">Récord de asistencia</span><span class="en">Attendance record</span></h4>
+        <p><span class="es">488 asistentes, 14 países, +180 empresas.</span><span class="en">488 attendees, 14 countries, 180+ firms.</span></p>
+      </div>
     </div>
 
+    <div class="cta-band reveal" style="flex-direction:column; text-align:center; justify-content:center; gap:var(--space-4);">
+      <p><span class="es">¿Querés ver cómo fue la última edición y quiénes patrocinaron el Kick Off Punta del Este 2026?</span><span class="en">Want to see how the last edition went and who sponsored Kick Off Punta del Este 2026?</span></p>
+      <a href="https://www.latamconsultus.com/kickoff2026/" target="_blank" rel="noopener" class="btn btn-primary"><span class="es">Vea la edición 2026</span><span class="en">See the 2026 edition</span></a>
+    </div>
   </div>
 </section>
 
@@ -1058,7 +1213,7 @@
         <div class="idx">02</div>
         <div>
           <h3><span class="es">Espacio de contenido, no de exhibición</span><span class="en">A content slot, not a display booth</span></h3>
-          <p><span class="es">Masterclasses, Hubs temáticos y Mesas Redondas diseñados para la conversación con audiencia pre-seleccionada por tema.</span>
+          <p><span class="es">Masterclasses, Hubs temáticos y mesas redondas diseñados para la conversación con audiencia pre-seleccionada por tema.</span>
           <span class="en">Masterclasses, thematic Hubs and Round Tables designed for dialogue with an audience that pre-selects by topic.</span></p>
         </div>
       </div>
@@ -1071,33 +1226,6 @@
         </div>
       </div>
     </div>
-    <div class="whatsnew reveal stagger">
-      <div class="wn-head">
-        <hr class="accent">
-        <p class="eyebrow"><span class="es">Lo nuevo en 2027</span><span class="en">What's new in 2027</span></p>
-      </div>
-      <div class="wn-card">
-        <span class="wn-num">01</span>
-        <h4><span class="es">Nuevos temas</span><span class="en">New topics</span></h4>
-        <p><span class="es">Más contenido sobre mercados privados, IA / wealth digital y asignación global.</span><span class="en">Expanded content on private markets, digital wealth/AI and global allocation.</span></p>
-      </div>
-      <div class="wn-card">
-        <span class="wn-num">02</span>
-        <h4><span class="es">Más aire para producto</span><span class="en">More room for product</span></h4>
-        <p><span class="es">Más tiempo asignado a demos de producto y soluciones.</span><span class="en">More time allocated to product demos and solution showcases.</span></p>
-      </div>
-      <div class="wn-card">
-        <span class="wn-num">03</span>
-        <h4><span class="es">Matchmaking reforzado</span><span class="en">Enhanced matchmaking</span></h4>
-        <p><span class="es">Cruce dirigido entre sponsors y asistentes según intereses declarados.</span><span class="en">Targeted introductions between sponsors and attendees based on declared interests.</span></p>
-      </div>
-      <div class="wn-card">
-        <span class="wn-num">04</span>
-        <h4><span class="es">Nueva sede</span><span class="en">New venue</span></h4>
-        <p><span class="es">Primera edición en Solanas Vacation Club, Punta del Este.</span><span class="en">First edition at Solanas Vacation Club, Punta del Este.</span></p>
-      </div>
-    </div>
-
     <div class="cta-band reveal">
       <p><span class="es">¿Querés ver qué incluye cada categoría?</span><span class="en">Want to see what each tier includes?</span></p>
       <a href="#categorias" class="btn btn-primary"><span class="es">Ver categorías</span><span class="en">See tiers</span></a>
@@ -1112,8 +1240,8 @@
       <hr class="accent">
       <p class="eyebrow"><span class="es">Formatos</span><span class="en">Formats</span></p>
       <h2><span class="es">Formas de participar en el escenario.</span><span class="en">Ways to take the stage.</span></h2>
-      <p><span class="es">Ordenados de mayor a menor exposición: la Masterclass es el formato de máxima visibilidad, el Hub concentra una audiencia elegida por tema y la Mesa Redonda es la conversación más íntima.</span>
-      <span class="en">Ranked from widest to most intimate reach: the Masterclass is the highest-visibility slot, the Hub gathers an audience that self-selects by topic, and the Round Table is the closest conversation.</span></p>
+      <p><span class="es">Ordenados de mayor a menor exposición: la Masterclass es el formato de máxima visibilidad, el Hub concentra una audiencia elegida por tema y la mesa redonda es la conversación más íntima.</span>
+      <span class="en">Ranked from widest to most intimate reach: the Masterclass is the highest-visibility slot, the Hub gathers an audience that self-selects by topic and the Round Table is the closest conversation.</span></p>
     </div>
     <div class="formats reveal stagger">
       <div class="fmt spotlight rank-1">
@@ -1121,7 +1249,7 @@
         <span class="rank-badge"><span class="rank-n">1</span><span class="es">Máxima exposición</span><span class="en">Widest reach</span></span>
         <span class="tag">Main Hall</span>
         <dt>Masterclass</dt>
-        <dd><span class="es">30 minutos, salón principal, para toda la audiencia. Sin pitch de producto — reservado a sponsors Diamond.</span><span class="en">30 minutes, main hall, for the whole audience. No product pitches — reserved for Diamond sponsors.</span></dd>
+        <dd><span class="es">30 minutos, salón principal, para toda la audiencia. Sin pitch de producto: reservado a sponsors Diamond.</span><span class="en">30 minutes, main hall, for the whole audience. No product pitches: reserved for Diamond sponsors.</span></dd>
         <p class="fmt-audience"><span class="es">Toda la audiencia · ~488 personas</span><span class="en">Full audience · ~488 people</span></p>
       </div>
       <div class="fmt spotlight rank-2">
@@ -1144,110 +1272,38 @@
   </div>
 </section>
 
-<!-- FIRMAS QUE YA PATROCINARON -->
+<!-- MARQUESINA DE FOTOS 2 -->
+<div class="marquee reverse" id="marqueeMid" aria-hidden="true"><div class="marquee-track"></div></div>
+
+<!-- TESTIMONIOS -->
 <section>
-  <div class="wrap">
-    <div class="firms-wall reveal">
-      <div class="sec-head">
-        <hr class="accent">
-        <p class="eyebrow"><span class="es">Más de 60 firmas ya confiaron en el Kick Off</span><span class="en">60+ firms have already trusted the Kick Off</span></p>
-        <h2><span class="es">Quién ya patrocinó Kick Off Punta del Este 2026.</span><span class="en">Who already sponsored Kick Off Punta del Este 2026.</span></h2>
-      </div>
-
-      <div class="firms-tier diamond">
-        <span class="tier-label">Diamond</span>
-        <div class="list">
-          <span>Apollo</span><span>Hamilton Lane</span><span>Julius Bär</span><span>MaximUs</span><span>Morgan Stanley</span>
-          <span>MTCM</span><span>M&amp;G</span><span>Raymond James</span><span>Thornburg</span><span>Vinci Compass</span><span>WTC Punta del Este</span>
-        </div>
-      </div>
-
-      <div class="firms-tier platinum">
-        <span class="tier-label">Platinum</span>
-        <div class="list">
-          <span>AllianceBernstein</span><span>BNY Pershing</span><span>Del Gatto</span><span>Edmond de Rothschild</span><span>GAM Investments</span>
-          <span>Garrington Private Equity</span><span>Hines</span><span>Janus Henderson</span><span>JHSF Capital</span><span>LarrainVial</span>
-          <span>Monroe Capital</span><span>Nomura Asset Management</span><span>Patria</span><span>Pictet Asset Management</span><span>T. Rowe Price</span>
-        </div>
-      </div>
-
-      <div class="firms-tier gold">
-        <span class="tier-label">Gold</span>
-        <div class="list">
-          <span>Algebris Investments</span><span>Amundi</span><span>Blue Owl</span><span>Fintree</span><span>flexfunds</span>
-          <span>iCapital</span><span>IncomeShares</span><span>ITC</span><span>LUMA</span><span>LYNK Markets</span><span>Pacific Asset Management</span>
-        </div>
-      </div>
-
-      <div class="firms-tier silver">
-        <span class="tier-label">Silver</span>
-        <div class="list">
-          <span>Addepar</span><span>Aegon Asset Management</span><span>Aliya</span><span>Ares</span><span>Ashmore</span>
-          <span>Axos Clearing</span><span>Axxes Capital</span><span>BlackRock</span><span>Blackstone</span><span>Brown Advisory</span>
-          <span>DoubleLine</span><span>Federated Hermes</span><span>Insight Trust</span><span>Interactive Brokers</span><span>Invesco</span>
-          <span>Karta</span><span>KKR</span><span>Lazard Asset Management</span><span>Mercantil Private Banking</span><span>Ninety One</span>
-          <span>Nuveen</span><span>PineBridge Investments</span><span>Robeco</span><span>Sesame</span><span>StoneX</span>
-          <span>Virtus Global Funds</span><span>Wellington Management</span>
-        </div>
-      </div>
-
-      <div class="firms-tier">
-        <span class="tier-label" style="color:var(--text-muted);"><span class="es">Apoyan</span><span class="en">Support</span></span>
-        <div class="list"><span>BTG Pactual</span></div>
-      </div>
-
-      <div class="firms-tier">
-        <span class="tier-label" style="color:var(--text-muted);"><span class="es">Medios</span><span class="en">Media</span></span>
-        <div class="list"><span>Funds Society</span><span>RankiaPro</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AGENDA -->
-<section id="agenda">
   <div class="wrap">
     <div class="sec-head reveal">
       <hr class="accent">
-      <p class="eyebrow"><span class="es">Agenda de referencia</span><span class="en">Reference agenda</span></p>
-      <h2><span class="es">Tres días, estructura recurrente.</span><span class="en">Three days, a recurring structure.</span></h2>
-      <p><span class="es">Así se reparten las masterclasses, los hubs y las mesas redondas a lo largo del evento — y dónde entra tu marca.</span><span class="en">How masterclasses, hubs and round tables are spread across the event — and where your brand fits in.</span></p>
+      <p class="eyebrow"><span class="es">En sus palabras</span><span class="en">In their words</span></p>
+      <h2><span class="es">Lo que dijeron del Kick Off Punta del Este 2026.</span><span class="en">What people said about Kick Off Punta del Este 2026.</span></h2>
     </div>
-    <div class="agenda reveal stagger">
-      <div class="day spotlight">
-        <h4><span class="es">Miércoles 24 de febrero</span><span class="en">Wednesday, February 24</span></h4>
-        <h3><span class="es">Día 1 · Llegada</span><span class="en">Day 1 · Arrival</span></h3>
-        <div class="row"><div class="t"><span class="es">Todo el día</span><span class="en">All day</span></div><div class="l"><span class="es">Llegada de delegados VIP</span><span class="en">VIP delegate arrivals</span></div></div>
-        <div class="row"><div class="t"><span class="es">Noche</span><span class="en">Evening</span></div><div class="l"><span class="es">Cena de bienvenida</span><span class="en">Welcome dinner</span></div></div>
+    <div class="quotes reveal stagger">
+      <div class="qcard spotlight">
+        <p class="q">“<span class="es">La organización y el evento fueron 100% first class</span><span class="en">The organization and the event were 100% first class</span>”.</p>
+        <div class="who">Eric D. Sternberg · Director, BlackRock</div>
       </div>
-      <div class="day spotlight">
-        <h4><span class="es">Jueves 25 de febrero</span><span class="en">Thursday, February 25</span></h4>
-        <h3><span class="es">Día 2 · Jornada completa</span><span class="en">Day 2 · Full day</span></h3>
-        <div class="row"><div class="t">08:00</div><div class="l"><span class="es">Desayuno y acreditación</span><span class="en">Breakfast & registration</span></div></div>
-        <div class="row"><div class="t">10:10</div><div class="l"><span class="es">Masterclasses</span><span class="en">Masterclass sessions</span></div></div>
-        <div class="row"><div class="t">11:30</div><div class="l"><span class="es">Hubs (3 rotaciones)</span><span class="en">Hubs (3 rotations)</span></div></div>
-        <div class="row"><div class="t">14:00</div><div class="l"><span class="es">Hubs (3 rotaciones)</span><span class="en">Hubs (3 rotations)</span></div></div>
-        <div class="row"><div class="t">15:50</div><div class="l"><span class="es">Masterclasses</span><span class="en">Masterclass sessions</span></div></div>
-        <div class="row"><div class="t">20:00</div><div class="l"><span class="es">Cena y networking</span><span class="en">Dinner & networking</span></div></div>
+      <div class="qcard spotlight">
+        <p class="q">“<span class="es">Las ideas innovadoras y el acceso directo a los portfolio managers son un diferencial que nos permite volver a nuestras oficinas a la vanguardia de las finanzas globales</span><span class="en">The innovative ideas and direct access to portfolio managers are a differentiator that lets us return to our offices ahead of the curve on global finance</span>”.</p>
+        <div class="who">Alejandro A. Lanusse · Wealth Manager Advisor, Winvest</div>
       </div>
-      <div class="day spotlight">
-        <h4><span class="es">Viernes 26 de febrero</span><span class="en">Friday, February 26</span></h4>
-        <h3><span class="es">Día 3 · Cierre y fiesta</span><span class="en">Day 3 · Closing &amp; party</span></h3>
-        <div class="row"><div class="t">08:00</div><div class="l"><span class="es">Desayuno</span><span class="en">Breakfast</span></div></div>
-        <div class="row"><div class="t">10:00</div><div class="l"><span class="es">Hubs y Mesas Redondas</span><span class="en">Hubs & Round Tables</span></div></div>
-        <div class="row"><div class="t">12:15</div><div class="l"><span class="es">Almuerzo de networking</span><span class="en">Networking lunch</span></div></div>
-        <div class="row"><div class="t">14:30</div><div class="l"><span class="es">Hubs y Mesas Redondas</span><span class="en">Hubs & Round Tables</span></div></div>
-        <div class="row"><div class="t">15:30</div><div class="l"><span class="es">Masterclasses de cierre</span><span class="en">Closing Masterclasses</span></div></div>
-        <div class="row"><div class="t">17:30</div><div class="l"><span class="es">Brindis de cierre</span><span class="en">Closing toast</span></div></div>
-        <div class="row is-party"><div class="t">21:00</div><div class="l"><span class="es"><strong>Fiesta de cierre</strong> — cena, música en vivo y DJ</span><span class="en"><strong>Closing party</strong> — dinner, live music and DJ</span></div></div>
+      <div class="qcard spotlight">
+        <p class="q">“<span class="es">El evento de LATAM ConsultUs es impresionante: una instancia para aprender, escuchar perspectivas de mercado y actualizarme sobre las nuevas tendencias de inversión</span><span class="en">LATAM ConsultUs' event is impressive: a chance to learn, hear market perspectives and stay current on new investment trends</span>”.</p>
+        <div class="who">Carolina Sur · <span class="es">Economista</span><span class="en">Economist</span></div>
       </div>
     </div>
-    <p class="agenda-note"><span class="es">Agenda de referencia basada en la estructura de KO2026 — horarios y actividad de cierre sujetos a confirmación según el layout definitivo del predio.</span><span class="en">Reference agenda based on the KO2026 structure — timings and the closing activity are subject to confirmation once the venue's final layout is set.</span></p>
+
+    <div class="cta-band reveal">
+      <p><span class="es">Sumá tu marca a la próxima edición.</span><span class="en">Bring your brand to the next edition.</span></p>
+      <a href="#categorias" class="btn btn-primary"><span class="es">Elegir categoría</span><span class="en">Choose a tier</span></a>
+    </div>
   </div>
 </section>
-
-<!-- MARQUESINA DE FOTOS 2 -->
-<div class="marquee reverse" id="marqueeMid" aria-hidden="true"><div class="marquee-track"></div></div>
 
 <!-- CATEGORÍAS DE SPONSOR -->
 <section id="categorias">
@@ -1331,8 +1387,8 @@
     <div class="guidelines">
       <div>
         <h4><span class="es">Delegados adicionales</span><span class="en">Additional delegates</span></h4>
-        <p><span class="es">Cada categoría incluye un número fijo de delegados. Cada delegado adicional tiene un costo de USD 3.000. Se aplica de forma estricta para preservar el equilibrio entre oferta y demanda (buy-side / sell-side) del evento.</span>
-        <span class="en">Each tier includes a fixed number of delegates. Any additional delegate costs USD 3,000. This is applied strictly to preserve the event's buy-side/sell-side balance.</span></p>
+        <p><span class="es">Cada categoría incluye un número fijo de delegados. Cada delegado adicional tiene un costo de USD 5.000. Se aplica de forma estricta para preservar el equilibrio entre oferta y demanda del evento.</span>
+        <span class="en">Each tier includes a fixed number of delegates. Any additional delegate costs USD 5,000. This is applied strictly to preserve the event's balance between supply and demand.</span></p>
       </div>
       <div>
         <h4><span class="es">Sin actividades paralelas</span><span class="en">No parallel activities</span></h4>
@@ -1342,186 +1398,6 @@
     </div>
   </div>
 </section>
-
-<!-- MÁS ALLÁ DEL STAND -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <hr class="accent">
-      <p class="eyebrow"><span class="es">Más allá del stand</span><span class="en">Beyond the stand</span></p>
-      <h2><span class="es">Otras formas de participación.</span><span class="en">Other participation formats.</span></h2>
-    </div>
-    <dl class="opps reveal stagger">
-      <div class="opp spotlight"><span class="tag">01</span><dt><span class="es">Asientos de marca</span><span class="en">Branded Seating</span></dt><dd><span class="es">Identidad de marca en las fundas de silla durante toda la jornada.</span><span class="en">Brand identity on seat covers throughout the day.</span></dd></div>
-      <div class="opp spotlight"><span class="tag">02</span><dt><span class="es">Lounge VIP</span><span class="en">VIP Lounge</span></dt><dd><span class="es">Espacio de marca con carga de celulares, café y snacks para delegados.</span><span class="en">Branded space with phone charging, coffee and snacks for delegates.</span></dd></div>
-      <div class="opp spotlight"><span class="tag">03</span><dt><span class="es">Activación interactiva</span><span class="en">Interactive Engagement</span></dt><dd><span class="es">Juegos o trivias con premios que generan interacción directa con la marca.</span><span class="en">Games or trivia with prizes that create direct brand interaction.</span></dd></div>
-      <div class="opp spotlight"><span class="tag">04</span><dt><span class="es">Photo Booth de marca</span><span class="en">Branded Photo Booth</span></dt><dd><span class="es">Rincón de experiencia diseñado para generar contenido compartible.</span><span class="en">Experience corner designed to generate shareable content.</span></dd></div>
-      <div class="opp spotlight"><span class="tag">05</span><dt><span class="es">Activación de bienestar</span><span class="en">Morning Wellness</span></dt><dd><span class="es">Sesión matutina de stretching, yoga o mindfulness antes de la agenda.</span><span class="en">Morning stretching, yoga or mindfulness session before the agenda starts.</span></dd></div>
-    </dl>
-
-    <div class="cta-band reveal">
-      <p><span class="es">Podemos diseñar una activación a medida de tu marca.</span><span class="en">We can design a brand activation tailored to you.</span></p>
-      <a href="#contacto" class="btn btn-primary" data-tier-cta=""><span class="es">Contactanos</span><span class="en">Get in touch</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- TRAYECTORIA -->
-<section id="trayectoria">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <hr class="accent">
-      <p class="eyebrow"><span class="es">Trayectoria</span><span class="en">Track record</span></p>
-      <h2><span class="es">Ocho ediciones de historia.</span><span class="en">Eight editions of history.</span></h2>
-      <p><span class="es">De un encuentro fundacional en 2018 a un foro regional consolidado.</span><span class="en">From a founding gathering in 2018 to an established regional forum.</span></p>
-    </div>
-
-    <figure class="pfig reveal" style="margin:0 0 var(--space-16);">
-      <div class="pfig-frame">
-        <img src="media/2026/execs-backdrop.jpg" alt="Kick Off Punta del Este 2026" loading="lazy" decoding="async" data-parallax="0.16">
-      </div>
-      <figcaption>
-        <span class="es"><b>Kick Off Punta del Este 2026.</b> Novena edición: 488 asistentes de 14 países y más de 180 empresas de la región.</span>
-        <span class="en block"><b>Kick Off Punta del Este 2026.</b> Ninth edition: 488 attendees from 14 countries and 180+ firms across the region.</span>
-      </figcaption>
-    </figure>
-
-    <div class="timeline reveal">
-      <div class="t-item">
-        <div class="yr-badge">2018</div>
-        <h3><span class="es">Conrad Hotel, Punta del Este</span><span class="en">Conrad Hotel, Punta del Este</span></h3>
-        <p><span class="es">Encuentro fundacional. Foco en profesionalizar el asesoramiento financiero independiente frente al modelo bancario tradicional. Con HSBC Uruguay y Pershing.</span><span class="en">The founding gathering. Focus on professionalizing independent financial advisory versus the traditional banking model. With HSBC Uruguay and Pershing.</span></p>
-        <div class="quote">“<span class="es">El evento fue innovador e interactivo para Uruguay</span><span class="en">The event was innovative and interactive for Uruguay</span>”.<cite>Rossana Ortiz, HSBC Uruguay</cite></div>
-      </div>
-      <div class="t-item">
-        <div class="yr-badge">2019</div>
-        <h3><span class="es">Enjoy Hotel, Punta del Este</span><span class="en">Enjoy Hotel, Punta del Este</span></h3>
-        <p><span class="es">~200 asesores independientes de la región y Miami. +20 gestoras internacionales (Janus Henderson, Wellington, M&G, Schroders). Foco en construcción de carteras.</span><span class="en">~200 independent advisors from the region and Miami. 20+ international managers (Janus Henderson, Wellington, M&G, Schroders). Focus on portfolio construction.</span></p>
-        <div class="quote">“<span class="es">Es un encuentro de trabajo intenso y exigente que promueve la profesionalización</span><span class="en">It's an intense, demanding work meeting that promotes professionalization</span>”.<cite>Verónica Rey, Founder</cite></div>
-      </div>
-      <div class="t-item">
-        <div class="yr-badge">2020</div>
-        <h3><span class="es">Distinción de Interés Turístico</span><span class="en">Recognized as Touristic Interest</span></h3>
-        <p><span class="es">+340 asistentes, 50+ gestoras internacionales (JPMorgan, Schroders, Franklin Templeton, Janus Henderson). Reconocido por el Ministerio de Turismo de Uruguay.</span><span class="en">340+ attendees, 50+ international managers (JPMorgan, Schroders, Franklin Templeton, Janus Henderson). Recognized by Uruguay's Ministry of Tourism.</span></p>
-      </div>
-      <div class="t-item">
-        <div class="yr-badge">2022</div>
-        <h3><span class="es">El regreso pospandemia</span><span class="en">The post-pandemic return</span></h3>
-        <p><span class="es">380+ asistentes (150 llegados del exterior), 42 gestoras, 16 presentaciones sobre el nuevo escenario de inversión.</span><span class="en">380+ attendees (150 traveling internationally), 42 asset managers, 16 sessions on the new investment landscape.</span></p>
-      </div>
-      <div class="t-item">
-        <div class="yr-badge">2023</div>
-        <h3><span class="es">“Elija su versión del futuro”</span><span class="en">"Choose your version of the future"</span></h3>
-        <p><span class="es">400+ asistentes. Participaron el presidente Lacalle Pou y la ministra Azucena Arbeleche. Speakers de AXA IM, Franklin Templeton, Blackstone y Morgan Stanley.</span><span class="en">400+ attendees. President Lacalle Pou and Minister Azucena Arbeleche took part. Speakers from AXA IM, Franklin Templeton, Blackstone and Morgan Stanley.</span></p>
-        <div class="quote">“<span class="es">Es un momento muy desafiante para los inversores porque no estamos en un ciclo normal</span><span class="en">It's a very challenging moment for investors because we're not in a normal cycle</span>”.<cite>Chris Iggo, AXA IM</cite></div>
-      </div>
-      <div class="t-item">
-        <div class="yr-badge">2024</div>
-        <h3><span class="es">Riesgo geopolítico y oportunidad regional</span><span class="en">Geopolitical risk and regional opportunity</span></h3>
-        <p><span class="es">~300 asistentes, 35 gestoras internacionales. Temas: recuperación de EE.UU., mercados privados, año electoral.</span><span class="en">~300 attendees, 35 international managers. Topics: U.S. recovery, private markets, election-year risk.</span></p>
-        <div class="quote">“<span class="es">Piensen en los riesgos, busquen oportunidades, sean activos</span><span class="en">Think about the risks, look for opportunities, be active</span>”.<cite>William Nott, Ninety One</cite></div>
-      </div>
-      <div class="t-item">
-        <div class="yr-badge">2025</div>
-        <h3><span class="es">44 firmas, ~400 asistentes</span><span class="en">44 firms, ~400 attendees</span></h3>
-        <p><span class="es">21 hubs y mesas de discusión. Presencia de Hamilton Lane, Pacific AM y Aviva Investors.</span><span class="en">21 discussion hubs and tables. Featuring Hamilton Lane, Pacific AM and Aviva Investors.</span></p>
-      </div>
-      <div class="t-item peak">
-        <div class="yr-badge">2026</div>
-        <h3><span class="es">488 asistentes, 14 países</span><span class="en">488 attendees, 14 countries</span></h3>
-        <p><span class="es">+180 empresas, 97% de valoración positiva, entrevista con el Ministro de Economía y Finanzas de Uruguay. Máximo histórico de asistencia registrado hasta la fecha.</span><span class="en">180+ firms, 97% positive rating, an interview with Uruguay's Minister of Economy and Finance. Highest attendance on record to date.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <hr class="accent">
-      <p class="eyebrow"><span class="es">En sus palabras</span><span class="en">In their words</span></p>
-      <h2><span class="es">Lo que dijeron del Kick Off Punta del Este 2026.</span><span class="en">What people said about Kick Off Punta del Este 2026.</span></h2>
-    </div>
-    <div class="quotes reveal stagger">
-      <div class="qcard spotlight">
-        <p class="q">“<span class="es">La organización y el evento fueron 100% first class</span><span class="en">The organization and the event were 100% first class</span>”.</p>
-        <div class="who">Eric D. Sternberg — Director, BlackRock</div>
-      </div>
-      <div class="qcard spotlight">
-        <p class="q">“<span class="es">Las ideas innovadoras y el acceso directo a los portfolio managers son un diferencial que nos permite volver a nuestras oficinas a la vanguardia de las finanzas globales</span><span class="en">The innovative ideas and direct access to portfolio managers are a differentiator that lets us return to our offices ahead of the curve on global finance</span>”.</p>
-        <div class="who">Alejandro A. Lanusse — Wealth Manager Advisor, Winvest</div>
-      </div>
-      <div class="qcard spotlight">
-        <p class="q">“<span class="es">El evento de LATAM ConsultUs es impresionante: una instancia para aprender, escuchar perspectivas de mercado y actualizarme sobre las nuevas tendencias de inversión</span><span class="en">LATAM ConsultUs' event is impressive: a chance to learn, hear market perspectives and stay current on new investment trends</span>”.</p>
-        <div class="who">Carolina Sur — <span class="es">Economista</span><span class="en">Economist</span></div>
-      </div>
-    </div>
-
-    <div class="cta-band reveal">
-      <p><span class="es">Sumá tu marca a la próxima edición.</span><span class="en">Bring your brand to the next edition.</span></p>
-      <a href="#categorias" class="btn btn-primary"><span class="es">Elegir categoría</span><span class="en">Choose a tier</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO -->
-<section id="video">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <hr class="accent">
-      <p class="eyebrow"><span class="es">El Kick Off en movimiento</span><span class="en">The Kick Off in motion</span></p>
-      <h2><span class="es">Mirá cómo se vivió la última edición.</span><span class="en">See how the last edition played out.</span></h2>
-      <p><span class="es">Dos minutos y medio de Kick Off Punta del Este 2026: escenario, hubs, stands y networking.</span><span class="en">Two and a half minutes of Kick Off Punta del Este 2026: main stage, hubs, stands and networking.</span></p>
-    </div>
-
-    <div class="videoframe reveal" id="videoFrame">
-      <video id="recapVideo" controls preload="none" playsinline
-             poster="media/2026/stage-wide.jpg"
-             aria-label="Kick Off Punta del Este 2026">
-        <source src="media/video/ko2026-recap.mp4" type="video/mp4">
-      </video>
-      <button class="video-play" id="videoPlay" type="button" aria-label="Reproducir video">
-        <span class="vp-icon" aria-hidden="true"></span>
-        <span class="vp-label"><span class="es">Ver el video</span><span class="en">Watch the video</span></span>
-      </button>
-    </div>
-
-    <div class="cta-band reveal">
-      <p><span class="es">Esto es lo que tu marca puede protagonizar en 2027.</span><span class="en">This is what your brand can headline in 2027.</span></p>
-      <a href="#contacto" class="btn btn-primary" data-tier-cta=""><span class="es">Quiero ser sponsor</span><span class="en">I want to sponsor</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- GALERÍA -->
-<section id="galeria">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <hr class="accent">
-      <p class="eyebrow"><span class="es">Así se vivió</span><span class="en">This is what it looked like</span></p>
-      <h2><span class="es">El Kick Off Punta del Este 2026 y 2025, en fotos.</span><span class="en">Kick Off Punta del Este 2026 and 2025, in photos.</span></h2>
-      <p><span class="es">Masterclasses, hubs, mesas redondas, stands y cocktail — un vistazo a las últimas dos ediciones.</span><span class="en">Masterclasses, hubs, round tables, stands and cocktail — a look at the last two editions.</span></p>
-    </div>
-
-    <div class="reveal">
-      <div class="gallery-head">
-        <div class="tabs" id="galleryTabs" role="tablist" aria-label="Categoría">
-          <button type="button" class="tab active" data-cat="all"><span class="es">Todas</span><span class="en">All</span></button>
-          <button type="button" class="tab" data-cat="masterclasses">Masterclasses</button>
-          <button type="button" class="tab" data-cat="hubs">Hubs</button>
-          <button type="button" class="tab" data-cat="stands">Stands</button>
-          <button type="button" class="tab" data-cat="cocktail">Cocktail</button>
-        </div>
-        <a class="gallery-link" href="https://www.latamconsultus.com/kickoff2026/galeria/" target="_blank" rel="noopener">
-          <span class="es">Ver la galería completa</span><span class="en">See the full gallery</span> ↗
-        </a>
-      </div>
-      <div class="masonry" id="masonry"></div>
-    </div>
-  </div>
-</section>
-
 
 <!-- CONTACTO -->
 <footer class="surface closing" id="contacto">
@@ -1564,13 +1440,12 @@
       </div>
       <div class="ff ff-wide form-actions">
         <button type="submit" class="btn btn-primary"><span class="es">Enviar consulta</span><span class="en">Send enquiry</span></button>
-        <p class="form-hint"><span class="es">Se abre tu cliente de correo con todo ya escrito, dirigido al equipo comercial.</span><span class="en">Your email client opens with everything already written, addressed to the commercial team.</span></p>
       </div>
       <p class="form-note" id="formNote"><span class="es">Si no se abrió tu cliente de correo, escribinos a <a href="mailto:vrey@latamconsultus.com,paulina@latamconsultus.com,felipe@latamconsultus.com">vrey@latamconsultus.com, paulina@latamconsultus.com y felipe@latamconsultus.com</a>.</span><span class="en">If your email client didn't open, write to <a href="mailto:vrey@latamconsultus.com,paulina@latamconsultus.com,felipe@latamconsultus.com">vrey@latamconsultus.com, paulina@latamconsultus.com and felipe@latamconsultus.com</a>.</span></p>
     </form>
     <p class="meta-line">
-      <span class="es">LATAM ConsultUs · Kick Off 2027 · Solanas Vacation Club, Punta del Este · 24–26 de febrero</span>
-      <span class="en">LATAM ConsultUs · Kick Off 2027 · Solanas Vacation Club, Punta del Este · February 24–26</span>
+      <span class="es">LATAM ConsultUs · Kick Off 2027 · Punta del Este, Uruguay · 23–25 de febrero</span>
+      <span class="en">LATAM ConsultUs · Kick Off 2027 · Punta del Este, Uruguay · February 23–25</span>
     </p>
     <div class="closing-marks">
       <img class="cm-ko" src="ko27-brand/logos/ko27-lockup-horizontal.png" alt="Kick Off 2027 · Punta del Este" loading="lazy" decoding="async">
@@ -1632,6 +1507,9 @@
     syncIndicator();
   }
 
+  var categoriasEl = document.getElementById('categorias');
+  var langToggle = document.querySelector('.langtoggle');
+
   function onScroll() {
     var h = document.documentElement;
     var scrolled = h.scrollTop || document.body.scrollTop;
@@ -1641,6 +1519,17 @@
     var past = scrolled > window.innerHeight * 0.6;
     siteNav.classList.toggle('show', past);
     toTop.classList.toggle('show', past);
+
+    /* Categorías is the one light section on the page — flip the floating nav
+       (and the language pill, which sits at the same height) to a dark-on-light
+       look while they're over that white background. */
+    if (categoriasEl) {
+      var navMid = 46;
+      var r = categoriasEl.getBoundingClientRect();
+      var onLight = r.top <= navMid && r.bottom >= navMid;
+      siteNav.classList.toggle('on-light', onLight);
+      if (langToggle) langToggle.classList.toggle('on-light', onLight);
+    }
 
     /* The section whose top has most recently passed the nav line is the active one. */
     var line = scrolled + 140;
@@ -1753,32 +1642,22 @@
     if (p && p.catch) p.catch(function () {});
   }
 
-  /* ---------- Video: overlay play button, and the file only downloads once asked for ---------- */
-  var videoFrame = document.getElementById('videoFrame');
-  if (videoFrame) {
-    var video = document.getElementById('recapVideo');
-    var playBtn = document.getElementById('videoPlay');
-    playBtn.addEventListener('click', function () {
-      videoFrame.classList.add('playing');
-      video.play();
-    });
-    video.addEventListener('pause', function () {
-      if (video.currentTime === 0 || video.ended) videoFrame.classList.remove('playing');
-    });
-    video.addEventListener('ended', function () { videoFrame.classList.remove('playing'); });
-  }
-
   /* ---------- Photo marquees: the list is duplicated so translateX(-50%) loops seamlessly ---------- */
   var MARQUEE_SETS = {
     marqueeTop: [
-      'media/2026/stage-wide.jpg', 'media/2026/expo-floor.jpg', 'media/2026/hub-thornburg.jpg',
-      'media/2026/cocktail-crowd.jpg', 'media/2026/stand-kkr.jpg', 'media/2026/masterclass-miami.jpg',
-      'media/2026/speaker-monroe.jpg', 'media/2026/tote-lanyard.jpg'
+      'media/sedes/solanas-laguna-aerea.jpg', 'media/sedes/solanas-entrada.jpg', 'media/sedes/solanas-costa.jpg',
+      'media/sedes/solanas-edificio.jpg', 'media/sedes/solanas-playa-piletas.jpg', 'media/sedes/solanas-interior.jpg',
+      'media/sedes/solanas-pileta-puente.jpg', 'media/sedes/solanas-canchas.jpg', 'media/sedes/solanas-complejo.jpg',
+      'media/sedes/solanas-tenis.jpg', 'media/sedes/solanas-gimnasio.jpg', 'media/sedes/solanas-restaurante.jpg'
     ],
     marqueeMid: [
-      'media/2026/activation.jpg', 'media/2026/stand-addepar-group.jpg', 'media/2025/masterclass-wtc.jpg',
-      'media/2026/cena-shark.jpg', 'media/2025/hub-speaker.jpg', 'media/2026/backdrop.jpg',
-      'media/2026/cocktail-wine.jpg', 'media/2025/masterclass-bramshill.jpg'
+      'media/2026/hub-roundtable-3.jpg', 'media/2026/stand-kkr.jpg', 'media/2026/masterclass-ares.jpg',
+      'media/2025/masterclass-wtc.jpg', 'media/2026/expo-floor-aerial.jpg', 'media/2026/masterclass-panel.jpg',
+      'media/2026/stage-wide.jpg', 'media/2026/hub-roundtable-1.jpg', 'media/2026/activation.jpg',
+      'media/2026/masterclass-portugal.jpg', 'media/2025/masterclass-bramshill.jpg', 'media/2026/hub-roundtable-4.jpg',
+      'media/2026/speaker-monroe.jpg', 'media/2026/masterclass-mg-team.jpg', 'media/2026/masterclass-larrainvial.jpg',
+      'media/2026/activation-2.jpg', 'media/2026/expo-floor.jpg', 'media/2026/masterclass-ab.jpg',
+      'media/2026/hub-roundtable-2.jpg', 'media/2026/masterclass-wide2.jpg'
     ]
   };
   Object.keys(MARQUEE_SETS).forEach(function (id) {
@@ -1795,9 +1674,37 @@
         img.loading = 'lazy';
         img.decoding = 'async';
         fig.appendChild(img);
+        fig.addEventListener('click', function () { openLightbox(srcs, srcs.indexOf(src)); });
         track.appendChild(fig);
       });
     }
+  });
+
+  /* ---------- Lightbox: click any carousel photo to see it larger ---------- */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbList = [];
+  var lbIdx = 0;
+  function openLightbox(list, index) {
+    lbList = list;
+    lbIdx = index < 0 ? 0 : index;
+    lbImg.src = lbList[lbIdx];
+    lightbox.classList.add('show');
+  }
+  function lbShow(i) {
+    if (!lbList.length) return;
+    lbIdx = (i + lbList.length) % lbList.length;
+    lbImg.src = lbList[lbIdx];
+  }
+  document.getElementById('lbClose').addEventListener('click', function () { lightbox.classList.remove('show'); });
+  document.getElementById('lbPrev').addEventListener('click', function () { lbShow(lbIdx - 1); });
+  document.getElementById('lbNext').addEventListener('click', function () { lbShow(lbIdx + 1); });
+  lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.classList.remove('show'); });
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('show')) return;
+    if (e.key === 'Escape') lightbox.classList.remove('show');
+    if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
   });
 
   /* ---------- Cross-fading photo panel with Ken Burns drift ---------- */
@@ -1813,6 +1720,11 @@
       img.decoding = 'async';
       host.insertBefore(img, dots);
       return img;
+    });
+    host.style.cursor = 'pointer';
+    host.addEventListener('click', function (e) {
+      if (e.target.closest('.cf-dots')) return;
+      openLightbox(srcs, idx);
     });
     var buttons = srcs.map(function (_, i) {
       var b = document.createElement('button');
@@ -1888,104 +1800,6 @@
     });
   }
 
-  /* ---------- Photo gallery: masonry + category filter + lightbox ---------- */
-  var PHOTOS = [
-    { src: 'media/2026/backdrop.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/stage-1.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/stage-2.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/stage-wide.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/masterclass-miami.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/masterclass-larrainvial.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/execs-backdrop.jpg', cat: 'masterclasses', year: '2026' },
-    { src: 'media/2026/speaker-monroe.jpg', cat: 'hubs', year: '2026' },
-    { src: 'media/2026/hub-thornburg.jpg', cat: 'hubs', year: '2026' },
-    { src: 'media/2026/speaker-backdrop.jpg', cat: 'hubs', year: '2026' },
-    { src: 'media/2026/speaker-30years.jpg', cat: 'hubs', year: '2026' },
-    { src: 'media/2026/tote-lanyard.jpg', cat: 'stands', year: '2026' },
-    { src: 'media/2026/expo-floor.jpg', cat: 'stands', year: '2026' },
-    { src: 'media/2026/activation.jpg', cat: 'stands', year: '2026' },
-    { src: 'media/2026/stand-kkr.jpg', cat: 'stands', year: '2026' },
-    { src: 'media/2026/stand-addepar-group.jpg', cat: 'stands', year: '2026' },
-    { src: 'media/2026/cocktail-wine.jpg', cat: 'cocktail', year: '2026' },
-    { src: 'media/2026/cocktail-crowd.jpg', cat: 'cocktail', year: '2026' },
-    { src: 'media/2026/cena-shark.jpg', cat: 'cocktail', year: '2026' },
-    { src: 'media/2025/masterclass-uscompanies.jpg', cat: 'masterclasses', year: '2025' },
-    { src: 'media/2025/masterclass-bramshill.jpg', cat: 'masterclasses', year: '2025' },
-    { src: 'media/2025/hub-alliancebernstein.jpg', cat: 'hubs', year: '2025' },
-    { src: 'media/2025/masterclass-wtc.jpg', cat: 'masterclasses', year: '2025' }
-  ];
-  var masonry = document.getElementById('masonry');
-  var lbList = [];
-
-  function renderGallery(cat) {
-    masonry.innerHTML = '';
-    lbList = [];
-    var i = 0;
-    PHOTOS.forEach(function (p) {
-      if (cat !== 'all' && p.cat !== cat) return;
-      lbList.push(p.src);
-      var tile = document.createElement('div');
-      tile.className = 'tile';
-      tile.style.opacity = '0';
-      tile.style.transform = 'translateY(18px)';
-      tile.style.transition = 'opacity 550ms cubic-bezier(.16,1,.3,1), transform 550ms cubic-bezier(.16,1,.3,1)';
-      tile.style.transitionDelay = (Math.min(i, 14) * 40) + 'ms';
-      var tag = document.createElement('span');
-      tag.className = 'yr-tag';
-      tag.textContent = p.year;
-      var img = document.createElement('img');
-      img.src = p.src;
-      img.alt = 'Kick Off Punta del Este ' + p.year;
-      img.loading = 'lazy';
-      tile.appendChild(tag);
-      tile.appendChild(img);
-      tile.addEventListener('click', function () { openLightbox(p.src); });
-      masonry.appendChild(tile);
-      i++;
-    });
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        masonry.querySelectorAll('.tile').forEach(function (t) {
-          t.style.opacity = '1';
-          t.style.transform = 'none';
-        });
-      });
-    });
-  }
-  document.querySelectorAll('#galleryTabs .tab').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('#galleryTabs .tab').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      renderGallery(btn.getAttribute('data-cat'));
-    });
-  });
-  renderGallery('all');
-
-  /* ---------- Lightbox ---------- */
-  var lightbox = document.getElementById('lightbox');
-  var lbImg = document.getElementById('lbImg');
-  var lbIdx = 0;
-  function openLightbox(src) {
-    lbIdx = lbList.indexOf(src);
-    lbImg.src = src;
-    lightbox.classList.add('show');
-  }
-  function lbShow(i) {
-    if (!lbList.length) return;
-    lbIdx = (i + lbList.length) % lbList.length;
-    lbImg.src = lbList[lbIdx];
-  }
-  document.getElementById('lbClose').addEventListener('click', function () { lightbox.classList.remove('show'); });
-  document.getElementById('lbPrev').addEventListener('click', function () { lbShow(lbIdx - 1); });
-  document.getElementById('lbNext').addEventListener('click', function () { lbShow(lbIdx + 1); });
-  lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.classList.remove('show'); });
-  document.addEventListener('keydown', function (e) {
-    if (!lightbox.classList.contains('show')) return;
-    if (e.key === 'Escape') lightbox.classList.remove('show');
-    if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
-    if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
-  });
-
   /* ---------- Plan cards → contact form: carry the chosen tier all the way to the email ---------- */
   var tierField = document.getElementById('fTier');
   document.querySelectorAll('[data-tier-cta]').forEach(function (link) {
@@ -2016,16 +1830,16 @@
       var en = document.documentElement.getAttribute('data-lang') === 'en';
 
       var subject = en
-        ? 'Kick Off 2027 — sponsorship enquiry' + (tier ? ' (' + tier + ')' : '')
-        : 'Kick Off 2027 — consulta de patrocinio' + (tier ? ' (' + tier + ')' : '');
+        ? 'Kick Off 2027: sponsorship enquiry' + (tier ? ' (' + tier + ')' : '')
+        : 'Kick Off 2027: consulta de patrocinio' + (tier ? ' (' + tier + ')' : '');
 
       var lines = en
         ? ['Name: ' + name, 'Company: ' + company, 'Email: ' + email,
-           'Tier of interest: ' + (tier || 'to be defined'), '', 'Message:', message || '—', '',
-           '— Sent from the Kick Off 2027 sponsorship proposal']
+           'Tier of interest: ' + (tier || 'to be defined'), '', 'Message:', message || '(no message)', '',
+           'Sent from the Kick Off 2027 sponsorship proposal']
         : ['Nombre: ' + name, 'Empresa: ' + company, 'Email: ' + email,
-           'Categoría de interés: ' + (tier || 'a definir'), '', 'Mensaje:', message || '—', '',
-           '— Enviado desde la propuesta de sponsors del Kick Off 2027'];
+           'Categoría de interés: ' + (tier || 'a definir'), '', 'Mensaje:', message || '(sin mensaje)', '',
+           'Enviado desde la propuesta de sponsors del Kick Off 2027'];
 
       var href = 'mailto:' + TEAM.join(',') +
         '?subject=' + encodeURIComponent(subject) +
