@@ -542,7 +542,7 @@
   @media (max-width:760px){ .quotes{ grid-template-columns:1fr; } }
 
   /* ---------- Agenda ---------- */
-  .agenda{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
+  .agenda{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-6); }
   .day{ padding:var(--space-6); box-shadow:var(--inset-hairline); border-radius:var(--radius-card); transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
   .day h4{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
   .day h3{ font-size:16px; font-weight:var(--fw-semibold); color:#fff; padding-bottom:var(--space-3); margin:var(--space-1) 0 var(--space-3); border-bottom:1px solid var(--border-hairline); }
@@ -550,7 +550,8 @@
   .day .row .t{ flex:0 0 58px; color:var(--ko-sky); font-weight:var(--fw-semibold); font-variant-numeric:tabular-nums; }
   .day .row .l{ color:var(--text-secondary); }
   .agenda-note{ margin-top:var(--space-8); font-size:13px; color:var(--text-muted); font-style:italic; }
-  @media (max-width:760px){ .agenda{ grid-template-columns:1fr; } }
+  @media (max-width:1000px){ .agenda{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .agenda{ grid-template-columns:1fr; } }
 
   /* ---------- Closing ---------- */
   .closing{ text-align:center; padding:var(--space-24) 0; }
@@ -886,7 +887,6 @@
 
 
   /* Day 3's party gets its own emphasis in the agenda. */
-  .day .row.is-party .l{ color:#fff; }
   .day .row.is-party .t{ color:var(--ko-magenta-bright); }
 
   /* ---------- Print / PDF export: nothing may stay hidden behind a scroll trigger ---------- */
@@ -967,8 +967,8 @@
       <span class="en">Every year, LATAM ConsultUs brings together, in one place, financial advisors from the region's leading banks and brokerages, private bankers, family offices, financial analysts and investment product selectors, alongside mutual fund managers, private asset managers and providers of solutions, products and services for the global wealth management industry. This proposal summarizes the format, track record and sponsorship tiers available at <strong>Kick Off Punta del Este 2027</strong>.</span>
     </p>
     <dl class="meta">
-      <div><dt><span class="es">Sede</span><span class="en">Venue</span></dt><dd><span class="dd-main"><span class="es">Centro de Convenciones</span><span class="en">Convention Centre</span></span><span class="dd-main">Solanas Vacation Club Crystal Beach</span></dd></div>
-      <div><dt><span class="es">Fecha</span><span class="en">Date</span></dt><dd><span class="dd-main"><span class="es">Martes 23 al jueves 25</span><span class="en">Tue 23 – Thu 25</span></span><span class="dd-sub"><span class="es">Febrero 2027</span><span class="en">February 2027</span></span></dd></div>
+      <div><dt><span class="es">Sede</span><span class="en">Venue</span></dt><dd><span class="dd-main"><span class="es">Centro de Convenciones</span><span class="en">Convention Centre</span></span><span class="dd-main" style="margin-top:4px;"><span style="color:var(--ko-sky);">+ </span>Solanas Punta del Este Spa &amp; Resort</span></dd></div>
+      <div><dt><span class="es">Fecha</span><span class="en">Date</span></dt><dd><span class="dd-main"><span class="es">Martes 23 al viernes 26</span><span class="en">Tue 23 – Fri 26</span></span><span class="dd-sub"><span class="es">Febrero 2027</span><span class="en">February 2027</span></span></dd></div>
       <div><dt><span class="es">Edición</span><span class="en">Edition</span></dt><dd><span class="dd-main"><span class="es">9ª edición</span><span class="en">9th edition</span></span></dd></div>
     </dl>
     <div class="ctas">
@@ -996,8 +996,8 @@
         <div class="venue-body">
           <h3><span class="es">Centro de Convenciones de Punta del Este</span><span class="en">Punta del Este Convention Centre</span></h3>
           <p>
-            <span class="es">El contenido central del Kick Off (masterclasses, mesas redondas y hubs temáticos) se desarrolla en el Centro de Convenciones de Punta del Este, uno de los recintos más grandes de la región.</span>
-            <span class="en block">The core of Kick Off (masterclasses, round tables and thematic hubs) takes place at the Punta del Este Convention Centre, one of the region's largest venues.</span>
+            <span class="es">El contenido central del Kick Off (masterclasses, mesas redondas y hubs temáticos) se desarrolla en el Centro de Convenciones de Punta del Este.</span>
+            <span class="en block">The core of Kick Off (masterclasses, round tables and thematic hubs) takes place at the Punta del Este Convention Centre.</span>
           </p>
           <div class="venue-facts">
             <span>18.000 m²</span>
@@ -1015,10 +1015,10 @@
           <div class="vs-b"><img src="media/sedes/solanas-complejo.jpg" alt="Complejo de Solanas frente a la laguna" loading="lazy" decoding="async"></div>
         </div>
         <div class="venue-body">
-          <h3>Solanas Vacation Club Crystal Beach</h3>
+          <h3>Solanas Punta del Este Spa & Resort</h3>
           <p>
-            <span class="es">Los invitados se alojan en Solanas Vacation Club Crystal Beach, frente a Playa Portezuelo, entre bosque y playa. El complejo cuenta con piscinas, canchas de tenis y pádel, y espacios al aire libre para el tiempo libre entre jornadas.</span>
-            <span class="en block">Guests stay at Solanas Vacation Club Crystal Beach, facing Playa Portezuelo, between forest and beach. The complex has pools, tennis and padel courts, and outdoor spaces for downtime between sessions.</span>
+            <span class="es">Los invitados se alojan en Solanas Punta del Este Spa & Resort, frente a Playa Portezuelo, entre bosque y playa. El complejo cuenta con piscinas, canchas de tenis y pádel, y espacios al aire libre para el tiempo libre entre jornadas.</span>
+            <span class="en block">Guests stay at Solanas Punta del Este Spa & Resort, facing Playa Portezuelo, between forest and beach. The complex has pools, tennis and padel courts, and outdoor spaces for downtime between sessions.</span>
           </p>
           <div class="venue-facts">
             <span><span class="es">190 ha de bosque nativo</span><span class="en">190 ha of native forest</span></span>
@@ -1055,14 +1055,14 @@
         <h3><span class="es">Día 2 · Conferencias</span><span class="en">Day 2 · Conferences</span></h3>
         <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Desayuno</span><span class="en">Breakfast</span></div></div>
         <div class="row"><div class="t">10:00</div><div class="l"><span class="es">Llegada de participantes y registro</span><span class="en">Participant arrivals and check-in</span></div></div>
-        <div class="row"><div class="t">11:30</div><div class="l"><span class="es">Traslado al centro de convenciones y acreditación</span><span class="en">Transfer to the convention centre and accreditation</span></div></div>
+        <div class="row"><div class="t">11:30</div><div class="l"><span class="es">Traslado al Centro de convenciones y acreditación</span><span class="en">Transfer to the convention centre and accreditation</span></div></div>
         <div class="row"><div class="t">13:00</div><div class="l"><span class="es">Almuerzo liviano</span><span class="en">Light lunch</span></div></div>
         <div class="row"><div class="t">14:30</div><div class="l"><span class="es">Apertura</span><span class="en">Opening</span></div></div>
         <div class="row"><div class="t">14:45</div><div class="l">Masterclass</div></div>
         <div class="row"><div class="t">15:45</div><div class="l">Masterclass</div></div>
         <div class="row"><div class="t">16:15</div><div class="l"><span class="es">Coffee break</span><span class="en">Coffee break</span></div></div>
         <div class="row"><div class="t">16:30</div><div class="l">Masterclass</div></div>
-        <div class="row"><div class="t">17:00</div><div class="l"><span class="es">Ideas Aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">17:00</div><div class="l"><span class="es">Ideas aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
         <div class="row"><div class="t">18:30</div><div class="l"><span class="es">Entrevista</span><span class="en">Interview</span></div></div>
         <div class="row"><div class="t">20:30</div><div class="l"><span class="es">Cena en Solanas</span><span class="en">Dinner at Solanas</span></div></div>
       </div>
@@ -1070,20 +1070,26 @@
         <h4><span class="es">Jueves 25 de febrero</span><span class="en">Thursday, February 25</span></h4>
         <h3><span class="es">Día 3 · Cierre y fiesta</span><span class="en">Day 3 · Closing &amp; party</span></h3>
         <div class="row"><div class="t">08:30</div><div class="l"><span class="es">Desayuno</span><span class="en">Breakfast</span></div></div>
-        <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Traslado al centro de convenciones</span><span class="en">Transfer to the convention centre</span></div></div>
+        <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Traslado al Centro de convenciones</span><span class="en">Transfer to the convention centre</span></div></div>
         <div class="row"><div class="t">10:00</div><div class="l"><span class="es">Apertura</span><span class="en">Opening</span></div></div>
-        <div class="row"><div class="t">10:30</div><div class="l">Masterclass</div></div>
-        <div class="row"><div class="t">11:00</div><div class="l">Masterclass</div></div>
-        <div class="row"><div class="t">11:30</div><div class="l"><span class="es">Coffee break</span><span class="en">Coffee break</span></div></div>
-        <div class="row"><div class="t">11:45</div><div class="l">Masterclass</div></div>
-        <div class="row"><div class="t">12:15</div><div class="l"><span class="es">Ideas Aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
-        <div class="row"><div class="t">13:15</div><div class="l"><span class="es">Almuerzo</span><span class="en">Lunch</span></div></div>
-        <div class="row"><div class="t">14:30</div><div class="l"><span class="es">Entrevista</span><span class="en">Interview</span></div></div>
-        <div class="row"><div class="t">15:00</div><div class="l"><span class="es">Debate</span><span class="en">Panel debate</span></div></div>
-        <div class="row"><div class="t">15:30</div><div class="l"><span class="es">Ideas Aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">10:15</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">10:45</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">11:15</div><div class="l"><span class="es">Coffee break</span><span class="en">Coffee break</span></div></div>
+        <div class="row"><div class="t">11:30</div><div class="l">Masterclass</div></div>
+        <div class="row"><div class="t">12:00</div><div class="l"><span class="es">Ideas aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">13:00</div><div class="l"><span class="es">Almuerzo</span><span class="en">Lunch</span></div></div>
+        <div class="row"><div class="t">14:15</div><div class="l"><span class="es">Ideas aplicables (hubs y talleres)</span><span class="en">Actionable Ideas (hubs and workshops)</span></div></div>
+        <div class="row"><div class="t">14:45</div><div class="l"><span class="es">Debate</span><span class="en">Panel debate</span></div></div>
+        <div class="row"><div class="t">15:15</div><div class="l"><span class="es">Entrevista de cierre</span><span class="en">Closing interview</span></div></div>
+        <div class="row"><div class="t">15:45</div><div class="l"><span class="es">Conclusiones finales y cierre</span><span class="en">Final remarks and closing</span></div></div>
         <div class="row"><div class="t">16:30</div><div class="l"><span class="es">Regreso a Solanas</span><span class="en">Return to Solanas</span></div></div>
         <div class="row"><div class="t">17:30</div><div class="l"><span class="es">Tiempo libre y actividades</span><span class="en">Free time and activities</span></div></div>
-        <div class="row is-party"><div class="t">21:00</div><div class="l"><span class="es"><strong>Fiesta de cierre en Solanas</strong> · Crystal</span><span class="en"><strong>Closing party at Solanas</strong> · Crystal</span></div></div>
+        <div class="row is-party"><div class="t">21:00</div><div class="l"><span class="es">Fiesta de cierre en Solanas</span><span class="en">Closing party at Solanas</span></div></div>
+      </div>
+      <div class="day spotlight">
+        <h4><span class="es">Viernes 26 de febrero</span><span class="en">Friday, February 26</span></h4>
+        <h3><span class="es">Día 4 · Partidas</span><span class="en">Day 4 · Departures</span></h3>
+        <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Desayuno y partidas</span><span class="en">Breakfast and departures</span></div></div>
       </div>
     </div>
     <p class="agenda-note"><span class="es">Agenda preliminar, sujeta a confirmación según el layout definitivo del predio.</span><span class="en">Preliminary agenda, subject to confirmation once the venue's final layout is set.</span></p>
@@ -1217,25 +1223,25 @@
       <div class="principle spotlight">
         <div class="idx">01</div>
         <div>
-          <h3><span class="es">Perfiles que deciden</span><span class="en">Decision-making profiles</span></h3>
-          <p><span class="es">Más del 80% son perfiles senior: asesores independientes (IFAs/EAMs), family offices, selectores de fondos y brokers de Uruguay, Argentina, Brasil, Chile, Perú, Colombia, México y US Offshore.</span>
-          <span class="en">80%+ senior profiles: independent advisors (IFAs/EAMs), family offices, fund selectors and brokers from Uruguay, Argentina, Brazil, Chile, Peru, Colombia, Mexico and US Offshore.</span></p>
+          <h3><span class="es">Acceso a los profesionales que definen la industria</span><span class="en">Access to the professionals shaping the industry</span></h3>
+          <p><span class="es">Patrocinar el Kick Off es tener acceso directo a los profesionales más selectos de la industria de gestión patrimonial a nivel regional y US Offshore.</span>
+          <span class="en">Sponsoring Kick Off means direct access to the most selective wealth management professionals across the region and US Offshore.</span></p>
         </div>
       </div>
       <div class="principle spotlight">
         <div class="idx">02</div>
         <div>
-          <h3><span class="es">Espacio de contenido, no de exhibición</span><span class="en">A content slot, not a display booth</span></h3>
-          <p><span class="es">Masterclasses, Hubs temáticos y mesas redondas diseñados para la conversación con audiencia pre-seleccionada por tema.</span>
-          <span class="en">Masterclasses, thematic Hubs and Round Tables designed for dialogue with an audience that pre-selects by topic.</span></p>
+          <h3><span class="es">Una convocatoria exclusiva, por invitación</span><span class="en">An exclusive, invitation-only gathering</span></h3>
+          <p><span class="es">Reúne a las firmas más grandes y representativas de la industria en América Latina, con cobertura en prácticamente todos los países de la región. Más de 300 profesionales de primer nivel, convocados exclusivamente por invitación.</span>
+          <span class="en">Brings together the largest, most representative firms in Latin America's wealth management industry, with coverage across nearly every country in the region. 300+ senior professionals, invited exclusively for the occasion.</span></p>
         </div>
       </div>
       <div class="principle spotlight">
         <div class="idx">03</div>
         <div>
-          <h3><span class="es">Visibilidad de marca</span><span class="en">Brand visibility</span></h3>
-          <p><span class="es">Recepciones, presentaciones 1:1 curadas, cobertura de prensa especializada (Funds Society, RankiaPro) y activaciones de marca en el predio del evento.</span>
-          <span class="en">Receptions, curated 1:1 introductions, specialized press coverage (Funds Society, RankiaPro) and on-site brand activations.</span></p>
+          <h3><span class="es">La puerta de entrada a la región</span><span class="en">The gateway to the region</span></h3>
+          <p><span class="es">Para las marcas que ya cubren América Latina o buscan comenzar a operar en la región, el Kick Off concentra oportunidades de negocio y networking en un solo lugar y un solo evento.</span>
+          <span class="en">For brands that already cover Latin America or are looking to enter the region, Kick Off concentrates business and networking opportunities in one place, in a single event.</span></p>
         </div>
       </div>
     </div>
@@ -1262,24 +1268,24 @@
         <span class="rank-badge"><span class="rank-n">1</span><span class="es">Máxima exposición</span><span class="en">Widest reach</span></span>
         <span class="tag">Main Hall</span>
         <dt>Masterclass</dt>
-        <dd><span class="es">30 minutos, salón principal, para toda la audiencia. Sin pitch de producto: reservado a sponsors Diamond.</span><span class="en">30 minutes, main hall, for the whole audience. No product pitches: reserved for Diamond sponsors.</span></dd>
+        <dd><span class="es">30 minutos en el salón principal, para toda la audiencia. Solo se abordan temas generales: no está permitida la presentación de productos o servicios específicos, ni referencias a procesos de inversión.</span><span class="en">30 minutes in the main hall, for the whole audience. Limited to general topics: no specific product or service presentations, and no references to investment processes.</span></dd>
         <p class="fmt-audience"><span class="es">Toda la audiencia · ~488 personas</span><span class="en">Full audience · ~488 people</span></p>
       </div>
       <div class="fmt spotlight rank-2">
         <div class="fmt-thumb"><img src="media/2026/speaker-monroe.jpg" alt="Hub temático con escenario y pantalla propia" loading="lazy" decoding="async"></div>
         <span class="rank-badge"><span class="rank-n">2</span><span class="es">Audiencia elegida</span><span class="en">Self-selected audience</span></span>
         <span class="tag">The Hub</span>
-        <dt><span class="es">Hub temático</span><span class="en">Thematic Hub</span></dt>
-        <dd><span class="es">20 minutos, audio dedicado, hasta 60 asistentes. Cupo pre-elegido por tema; cierra al llenarse.</span><span class="en">20 minutes, dedicated audio, up to 60 attendees. Audience pre-selects by topic; closes once full.</span></dd>
+        <dt>The Hub</dt>
+        <dd><span class="es">20 minutos, audio dedicado, hasta 60 asistentes. En esta instancia se pueden presentar ideas de inversión concretas, productos y/o servicios, frente a una audiencia que ya eligió el tema. Cierra al llenarse el cupo.</span><span class="en">20 minutes, dedicated audio, up to 60 attendees. This is the space to present concrete investment ideas, products and/or services to an audience that has already chosen the topic. Closes once full.</span></dd>
         <p class="fmt-audience"><span class="es">Hasta 60 personas</span><span class="en">Up to 60 people</span></p>
       </div>
       <div class="fmt spotlight rank-3">
         <div class="fmt-thumb"><img src="media/2026/hub-thornburg.jpg" alt="Mesa redonda con pantalla y discusión abierta" loading="lazy" decoding="async"></div>
         <span class="rank-badge"><span class="rank-n">3</span><span class="es">Conversación cercana</span><span class="en">Closest conversation</span></span>
-        <span class="tag">Sala 1 · 2 · 3</span>
+        <span class="tag">Sala 1 · 2 · 3 · 4</span>
         <dt><span class="es">Mesa Redonda</span><span class="en">Round Table</span></dt>
-        <dd><span class="es">20 minutos de presentación con pantalla + discusión abierta, hasta 20 participantes.</span><span class="en">20-minute presentation with screen + open discussion, up to 20 participants.</span></dd>
-        <p class="fmt-audience"><span class="es">Hasta 20 personas</span><span class="en">Up to 20 people</span></p>
+        <dd><span class="es">20 minutos de espacio interactivo, con una audiencia de hasta 30 personas, para discutir sobre productos y/o servicios. La conversación más íntima, donde el intercambio directo con los participantes la enriquece.</span><span class="en">20-minute interactive space, with an audience of up to 30 people, to discuss products and/or services. The most intimate conversation, enriched by direct exchange with participants.</span></dd>
+        <p class="fmt-audience"><span class="es">Hasta 30 personas</span><span class="en">Up to 30 people</span></p>
       </div>
     </div>
   </div>
@@ -1400,8 +1406,8 @@
     <div class="guidelines">
       <div>
         <h4><span class="es">Delegados adicionales</span><span class="en">Additional delegates</span></h4>
-        <p><span class="es">Cada categoría incluye un número fijo de delegados. Cada delegado adicional tiene un costo de USD 5.000. Se aplica de forma estricta para preservar el equilibrio entre oferta y demanda del evento.</span>
-        <span class="en">Each tier includes a fixed number of delegates. Any additional delegate costs USD 5,000. This is applied strictly to preserve the event's balance between supply and demand.</span></p>
+        <p><span class="es">Cada categoría incluye un número fijo de delegados, y el speaker de la Masterclass, el Hub o la Mesa Redonda está contemplado dentro de ese número. Cada delegado adicional tiene un costo de USD 5.000. Se aplica de forma estricta para preservar el equilibrio entre oferta y demanda del evento.</span>
+        <span class="en">Each tier includes a fixed number of delegates, and the speaker for the Masterclass, Hub or Round Table is counted within that number. Any additional delegate costs USD 5,000. This is applied strictly to preserve the event's balance between supply and demand.</span></p>
       </div>
       <div>
         <h4><span class="es">Sin actividades paralelas</span><span class="en">No parallel activities</span></h4>
@@ -1466,8 +1472,8 @@
       <img class="cm-latam" src="ko27-brand/logos/latam-consultus-lockup-white.png" alt="LATAM ConsultUs" loading="lazy" decoding="async">
     </div>
     <p class="disclaimer">
-      <span class="es">Documento de trabajo interno de LATAM ConsultUs. Las cifras de trayectoria 2018–2026 provienen de material propio y de cobertura de prensa pública (Funds Society, RankiaPro, latamconsultus.com). Sede, fecha, valores y disponibilidad de cupos están sujetos a confirmación.</span>
-      <span class="en">Internal working document from LATAM ConsultUs. Track-record figures for 2018–2026 are drawn from internal materials and public press coverage (Funds Society, RankiaPro, latamconsultus.com). Venue, date, pricing and slot availability are subject to confirmation.</span>
+      <span class="es">Este documento es de uso interno y confidencial de LATAM ConsultUs. Su contenido no debe distribuirse, reproducirse ni compartirse con terceros sin autorización previa. Las cifras de trayectoria 2018–2026 provienen de material propio y de cobertura de prensa pública (Funds Society, RankiaPro, latamconsultus.com). Sede, fecha, valores y disponibilidad de cupos están sujetos a confirmación.</span>
+      <span class="en">This document is for the internal, confidential use of LATAM ConsultUs. Its content may not be distributed, reproduced or shared with third parties without prior authorization. Track-record figures for 2018–2026 are drawn from internal materials and public press coverage (Funds Society, RankiaPro, latamconsultus.com). Venue, date, pricing and slot availability are subject to confirmation.</span>
     </p>
   </div>
 </footer>
