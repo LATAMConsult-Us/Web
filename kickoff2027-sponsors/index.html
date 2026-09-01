@@ -564,19 +564,19 @@
   @media (max-width:760px){ .quotes{ grid-template-columns:1fr; } }
 
   /* ---------- Agenda ----------
-     Columns, not a grid: the days are very unequal in length (day 1 and day 4 are a
-     couple of rows, day 3 is fifteen), so a grid stretches the short cards into tall
-     empty boxes to match their row neighbour. Columns let the browser balance total
-     height instead, so a short day quietly shares a column with another short day. */
-  .agenda{ column-count:2; column-gap:var(--space-6); }
-  .day{ break-inside:avoid; margin-bottom:var(--space-6); padding:var(--space-6); box-shadow:var(--inset-hairline); border-radius:var(--radius-card); transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+     Two explicit columns, not an auto-balanced one: day 1 stacks over day 2 on the
+     left, day 3 (the longest) stacks over day 4 on the right, so day 3 reads as
+     paired alongside day 2 rather than wherever an automatic balance would drop it. */
+  .agenda{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-6); align-items:start; }
+  .agenda-col{ display:flex; flex-direction:column; gap:var(--space-6); }
+  .day{ padding:var(--space-6); box-shadow:var(--inset-hairline); border-radius:var(--radius-card); transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
   .day h4{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
   .day h3{ font-size:16px; font-weight:var(--fw-semibold); color:#fff; padding-bottom:var(--space-3); margin:var(--space-1) 0 var(--space-3); border-bottom:1px solid var(--border-hairline); }
   .day .row{ display:flex; gap:var(--space-3); font-size:13.5px; padding:6px 0; }
   .day .row .t{ flex:0 0 58px; color:var(--ko-sky); font-weight:var(--fw-semibold); font-variant-numeric:tabular-nums; }
   .day .row .l{ color:var(--text-secondary); }
   .agenda-note{ margin-top:var(--space-2); font-size:13px; color:var(--text-muted); font-style:italic; }
-  @media (max-width:600px){ .agenda{ column-count:1; } }
+  @media (max-width:600px){ .agenda{ grid-template-columns:1fr; } }
 
   /* ---------- Closing ---------- */
   .closing{ text-align:center; padding:var(--space-24) 0; }
@@ -1070,6 +1070,7 @@
       <p><span class="es">Así se organiza el contenido del Kick Off 2027 y dónde entra tu marca.</span><span class="en">How Kick Off 2027's content is organized and where your brand fits in.</span></p>
     </div>
     <div class="agenda reveal stagger">
+      <div class="agenda-col">
       <div class="day spotlight">
         <h4><span class="es">Martes 23 de febrero</span><span class="en">Tuesday, February 23</span></h4>
         <h3><span class="es">Día 1 · Llegada</span><span class="en">Day 1 · Arrival</span></h3>
@@ -1092,6 +1093,8 @@
         <div class="row"><div class="t">18:30</div><div class="l"><span class="es">Entrevista</span><span class="en">Interview</span></div></div>
         <div class="row"><div class="t">20:30</div><div class="l"><span class="es">Cena en Solanas</span><span class="en">Dinner at Solanas</span></div></div>
       </div>
+      </div>
+      <div class="agenda-col">
       <div class="day spotlight">
         <h4><span class="es">Jueves 25 de febrero</span><span class="en">Thursday, February 25</span></h4>
         <h3><span class="es">Día 3 · Cierre y fiesta</span><span class="en">Day 3 · Closing &amp; party</span></h3>
@@ -1116,6 +1119,7 @@
         <h4><span class="es">Viernes 26 de febrero</span><span class="en">Friday, February 26</span></h4>
         <h3><span class="es">Día 4 · Partidas</span><span class="en">Day 4 · Departures</span></h3>
         <div class="row"><div class="t"><span class="es">Mañana</span><span class="en">Morning</span></div><div class="l"><span class="es">Desayuno y partidas</span><span class="en">Breakfast and departures</span></div></div>
+      </div>
       </div>
     </div>
     <p class="agenda-note"><span class="es">Agenda preliminar, sujeta a confirmación según el layout definitivo del predio. La asistencia a la totalidad de las charlas y el cumplimiento de la agenda son de carácter obligatorio para todos los invitados.</span><span class="en">Preliminary agenda, subject to confirmation once the venue's final layout is set. Attendance at all sessions and adherence to the full agenda are mandatory for every guest.</span></p>
@@ -1419,8 +1423,8 @@
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
-          <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
-          <li class="no"><span class="es">Mesa Redonda</span><span class="en">Round Table</span></li>
+          <li class="no"><span class="es">Hub temático</span><span class="en">Thematic Hub</span></li>
+          <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
           <li class="yes"><span class="es">Stand de 2×2m en zona expo</span><span class="en">2×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
         </ul>
