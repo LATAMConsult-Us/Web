@@ -480,6 +480,24 @@
   #categorias .guidelines h4{ color:rgba(11,11,18,.5); }
   #categorias .guidelines p{ color:rgba(11,11,18,.68); }
 
+  /* ---------- Plano del predio: light section too, so it hands off cleanly into Categorías ---------- */
+  #plano{
+    background:
+      radial-gradient(circle at 12% 15%, rgba(11,92,219,.14), transparent 42%),
+      radial-gradient(circle at 88% 12%, rgba(161,53,220,.14), transparent 42%),
+      radial-gradient(circle at 85% 85%, rgba(241,135,33,.12), transparent 42%),
+      radial-gradient(circle at 15% 90%, rgba(74,163,238,.12), transparent 42%),
+      #ffffff;
+  }
+  #plano .eyebrow{ color:rgba(11,11,18,.55); }
+  #plano .sec-head h2{ color:#0b0b12; }
+  #plano .sec-head p{ color:rgba(11,11,18,.68); }
+  .plano-fig{ margin:0; border-radius:var(--radius-xl); overflow:hidden; cursor:pointer;
+    background:#fff; box-shadow:0 1px 0 rgba(11,11,18,.06), 0 24px 56px rgba(20,20,40,.14); }
+  .plano-fig img{ width:100%; display:block; transition:transform 500ms var(--ease-out); }
+  @media (hover:hover) and (pointer:fine){ .plano-fig:hover img{ transform:scale(1.015); } }
+  .plano-fig figcaption{ padding:var(--space-4) var(--space-6); font-size:12.5px; color:rgba(11,11,18,.55); text-align:center; }
+
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
   .opp{ padding:var(--space-6); box-shadow:var(--inset-hairline); border-radius:var(--radius-card); transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
@@ -542,17 +560,20 @@
   .qcard .who{ margin-top:var(--space-3); font-size:11px; color:var(--ko-sky); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:.1em; }
   @media (max-width:760px){ .quotes{ grid-template-columns:1fr; } }
 
-  /* ---------- Agenda ---------- */
-  .agenda{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-6); }
-  .day{ padding:var(--space-6); box-shadow:var(--inset-hairline); border-radius:var(--radius-card); transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+  /* ---------- Agenda ----------
+     Columns, not a grid: the days are very unequal in length (day 1 and day 4 are a
+     couple of rows, day 3 is fifteen), so a grid stretches the short cards into tall
+     empty boxes to match their row neighbour. Columns let the browser balance total
+     height instead, so a short day quietly shares a column with another short day. */
+  .agenda{ column-count:2; column-gap:var(--space-6); }
+  .day{ break-inside:avoid; margin-bottom:var(--space-6); padding:var(--space-6); box-shadow:var(--inset-hairline); border-radius:var(--radius-card); transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
   .day h4{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
   .day h3{ font-size:16px; font-weight:var(--fw-semibold); color:#fff; padding-bottom:var(--space-3); margin:var(--space-1) 0 var(--space-3); border-bottom:1px solid var(--border-hairline); }
   .day .row{ display:flex; gap:var(--space-3); font-size:13.5px; padding:6px 0; }
   .day .row .t{ flex:0 0 58px; color:var(--ko-sky); font-weight:var(--fw-semibold); font-variant-numeric:tabular-nums; }
   .day .row .l{ color:var(--text-secondary); }
-  .agenda-note{ margin-top:var(--space-8); font-size:13px; color:var(--text-muted); font-style:italic; }
-  @media (max-width:1000px){ .agenda{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:600px){ .agenda{ grid-template-columns:1fr; } }
+  .agenda-note{ margin-top:var(--space-2); font-size:13px; color:var(--text-muted); font-style:italic; }
+  @media (max-width:600px){ .agenda{ column-count:1; } }
 
   /* ---------- Closing ---------- */
   .closing{ text-align:center; padding:var(--space-24) 0; }
@@ -941,6 +962,7 @@
     <a href="#agenda"><span class="es">Agenda</span><span class="en">Agenda</span></a>
     <a href="#numeros"><span class="es">Números</span><span class="en">Numbers</span></a>
     <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Track record</span></a>
+    <a href="#plano"><span class="es">Plano</span><span class="en">Floor plan</span></a>
     <a href="#categorias"><span class="es">Categorías</span><span class="en">Tiers</span></a>
   </div>
   <a href="#contacto" class="btn btn-primary cta"><span class="es">Quiero ser sponsor</span><span class="en">Become a sponsor</span></a>
@@ -1326,6 +1348,22 @@
   </div>
 </section>
 
+<!-- PLANO DEL PREDIO -->
+<section id="plano">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <hr class="accent">
+      <p class="eyebrow"><span class="es">Plano del predio</span><span class="en">Venue floor plan</span></p>
+      <h2><span class="es">Así se distribuyen los stands.</span><span class="en">Here's how the stands are laid out.</span></h2>
+      <p><span class="es">Sector Auditorio Principal del Centro de Convenciones, con la ubicación de cada stand según categoría.</span><span class="en">Main Auditorium sector of the Convention Centre, with each stand's location by tier.</span></p>
+    </div>
+    <figure class="plano-fig reveal" id="planoFig">
+      <img src="media/plano/plano-auditorio-principal.jpg" alt="Plano del sector Auditorio Principal, Centro de Convenciones de Punta del Este" loading="lazy" decoding="async">
+      <figcaption><span class="es">Tocá la imagen para ampliarla.</span><span class="en">Tap the image to enlarge it.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- CATEGORÍAS DE SPONSOR -->
 <section id="categorias">
   <div class="wrap">
@@ -1528,7 +1566,7 @@
     syncIndicator();
   }
 
-  var categoriasEl = document.getElementById('categorias');
+  var lightEls = ['plano', 'categorias'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
   var langToggle = document.querySelector('.langtoggle');
 
   function onScroll() {
@@ -1541,13 +1579,15 @@
     siteNav.classList.toggle('show', past);
     toTop.classList.toggle('show', past);
 
-    /* Categorías is the one light section on the page — flip the floating nav
+    /* Plano and Categorías are the light sections on the page — flip the floating nav
        (and the language pill, which sits at the same height) to a dark-on-light
        look while they're over that white background. */
-    if (categoriasEl) {
+    if (lightEls.length) {
       var navMid = 46;
-      var r = categoriasEl.getBoundingClientRect();
-      var onLight = r.top <= navMid && r.bottom >= navMid;
+      var onLight = lightEls.some(function (el) {
+        var r = el.getBoundingClientRect();
+        return r.top <= navMid && r.bottom >= navMid;
+      });
       siteNav.classList.toggle('on-light', onLight);
       if (langToggle) langToggle.classList.toggle('on-light', onLight);
     }
@@ -1742,6 +1782,15 @@
     if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
     if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
   });
+
+  /* ---------- Floor plan: click to see it full size ---------- */
+  var planoFig = document.getElementById('planoFig');
+  if (planoFig) {
+    planoFig.addEventListener('click', function () {
+      var src = planoFig.querySelector('img').getAttribute('src');
+      openLightbox([src], 0);
+    });
+  }
 
   /* ---------- Cross-fading photo panel with Ken Burns drift ---------- */
   document.querySelectorAll('.crossfade[data-photos]').forEach(function (host) {
