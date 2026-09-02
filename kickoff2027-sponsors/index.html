@@ -424,6 +424,9 @@
   .plan h3{ font-size:21px; font-weight:var(--fw-semibold); color:#fff; letter-spacing:.01em; }
   .plan-diamond h3{ color:var(--ko-sky); }
   .plan .plan-sub{ margin-top:var(--space-2); font-size:13px; line-height:1.5; color:var(--text-secondary); }
+  .plan .plan-price{ margin-top:var(--space-4); font-size:26px; font-weight:var(--fw-bold); color:#fff; letter-spacing:.01em; }
+  .plan-diamond .plan-price{ color:var(--ko-sky); }
+  .plan-gold .plan-price{ color:var(--ko-amber); }
   .plan-list{ list-style:none; margin:0 0 var(--space-6); padding:0; display:flex; flex-direction:column; gap:var(--space-3); flex:1; }
   .plan-list li{ position:relative; padding-left:24px; font-size:13.5px; line-height:1.5; color:#fff; }
   .plan-list li::before{ position:absolute; left:0; top:0; font-weight:var(--fw-bold); }
@@ -473,6 +476,8 @@
   #categorias .plan h3{ color:#0b0b12; }
   #categorias .plan-diamond h3{ color:var(--ko-blue); }
   #categorias .plan-sub{ color:rgba(11,11,18,.65); }
+  #categorias .plan-price{ color:#0b0b12; }
+  #categorias .plan-diamond .plan-price{ color:var(--ko-blue); }
   #categorias .plan header{ border-bottom-color:rgba(11,11,18,.12); }
   #categorias .plan-list li{ color:#1a1a26; }
   #categorias .plan-list li.no{ color:rgba(11,11,18,.4); }
@@ -1395,12 +1400,13 @@
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Diamond</h3>
           <p class="plan-sub"><span class="es">El único con escenario principal</span><span class="en">The only tier with the main stage</span></p>
+          <p class="plan-price"><span class="es">USD $35.000</span><span class="en">USD $35,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="yes"><span class="es">Masterclass de 30 min en el salón principal</span><span class="en">30-min Masterclass in the main hall</span></li>
           <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
           <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
-          <li class="yes"><span class="es">Stand premium de 6×3m</span><span class="en">6×3m premium stand</span></li>
+          <li class="yes"><span class="es">Stand premium de 6×3m en zona foyer</span><span class="en">6×3m premium stand in the foyer area</span></li>
           <li class="yes"><span class="es">4 delegados incluidos</span><span class="en">4 delegates included</span></li>
         </ul>
         <a class="btn btn-primary plan-cta" href="#contacto" data-tier-cta="Diamond"><span class="es">Quiero Diamond</span><span class="en">I want Diamond</span></a>
@@ -1410,13 +1416,14 @@
         <header>
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Platinum</h3>
-          <p class="plan-sub"><span class="es">Dos formatos + stand en el salón principal</span><span class="en">Two formats + a stand in the main hall</span></p>
+          <p class="plan-sub"><span class="es">Dos formatos + stand en zona expo</span><span class="en">Two formats + a stand in the expo area</span></p>
+          <p class="plan-price"><span class="es">USD $30.000</span><span class="en">USD $30,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
           <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
           <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
-          <li class="yes"><span class="es">Stand de 4×3m en el salón principal</span><span class="en">4×3m stand in the main hall</span></li>
+          <li class="yes"><span class="es">Stand de 4×3m en zona expo</span><span class="en">4×3m stand in the expo area</span></li>
           <li class="yes"><span class="es">3 delegados incluidos</span><span class="en">3 delegates included</span></li>
         </ul>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Platinum"><span class="es">Quiero Platinum</span><span class="en">I want Platinum</span></a>
@@ -1426,13 +1433,14 @@
         <header>
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Gold</h3>
-          <p class="plan-sub"><span class="es">Un formato de contenido + stand en expo</span><span class="en">One content slot + an expo stand</span></p>
+          <p class="plan-sub"><span class="es">Un formato de contenido + stand en foyer</span><span class="en">One content slot + a foyer stand</span></p>
+          <p class="plan-price"><span class="es">USD $25.000</span><span class="en">USD $25,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
           <li class="no"><span class="es">Hub temático</span><span class="en">Thematic Hub</span></li>
           <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
-          <li class="yes"><span class="es">Stand de 3×2m en zona expo</span><span class="en">3×2m stand in the expo area</span></li>
+          <li class="yes"><span class="es">Stand de 3×2m en zona foyer</span><span class="en">3×2m stand in the foyer area</span></li>
           <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
         </ul>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Gold"><span class="es">Quiero Gold</span><span class="en">I want Gold</span></a>
@@ -1443,6 +1451,7 @@
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Silver</h3>
           <p class="plan-sub"><span class="es">Presencia con stand en zona expo</span><span class="en">Stand presence in the expo area</span></p>
+          <p class="plan-price"><span class="es">USD $20.000</span><span class="en">USD $20,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
@@ -1455,7 +1464,7 @@
       </article>
     </div>
 
-    <p class="tiers-note"><span class="es">Valores y disponibilidad de cupos por categoría, a consultar con el equipo comercial.</span><span class="en">Pricing and slot availability per tier, available on request from our commercial team.</span></p>
+    <p class="tiers-note"><span class="es">Valores en dólares americanos (USD). Disponibilidad de cupos por categoría, a consultar con el equipo comercial.</span><span class="en">Prices in US dollars (USD). Slot availability per tier, available on request from our commercial team.</span></p>
 
     <div class="guidelines">
       <div>
