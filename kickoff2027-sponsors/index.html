@@ -506,10 +506,20 @@
   @media (hover:hover) and (pointer:fine){ .plano-fig:hover img{ transform:scale(1.015); } }
   .plano-fig figcaption{ padding:var(--space-4) var(--space-6); font-size:12.5px; color:rgba(11,11,18,.55); text-align:center; }
 
-  /* ---------- Per-tier "See the stand" link: opens that tier's renders in the lightbox ---------- */
-  .plan-render-link{ background:none; border:none; padding:0; margin-bottom:var(--space-4); cursor:pointer; font-family:var(--font-sans); }
-  #categorias .gallery-link{ color:var(--ko-blue); }
-  #categorias .gallery-link:hover{ color:#000; }
+  /* ---------- Per-tier "See the stand" button: opens that tier's renders in the lightbox.
+       A full-width secondary pill, same width as the CTA below it, so it reads as a real
+       action rather than a fine-print link that gets lost next to the checklist. ---------- */
+  .plan-render-link{
+    display:flex; align-items:center; justify-content:center; gap:7px; width:100%;
+    padding:11px 16px; margin:0 0 var(--space-3);
+    border:1px solid rgba(11,92,219,.35); border-radius:var(--radius-pill);
+    background:rgba(11,92,219,.07);
+    font-family:var(--font-sans); font-size:13.5px; font-weight:var(--fw-semibold);
+    color:var(--ko-blue); cursor:pointer;
+    transition:background var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
+  }
+  .plan-render-link:hover{ background:rgba(11,92,219,.14); border-color:rgba(11,92,219,.55); }
+  .plan-render-link:active{ transform:scale(.985); }
 
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -1390,7 +1400,7 @@
           <li class="yes"><span class="es">Stand premium de 4×3m</span><span class="en">4×3m premium stand</span></li>
           <li class="yes"><span class="es">4 delegados incluidos</span><span class="en">4 delegates included</span></li>
         </ul>
-        <button type="button" class="gallery-link plan-render-link" data-render="diamond"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
+        <button type="button" class="plan-render-link" data-render="diamond"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-primary plan-cta" href="#contacto" data-tier-cta="Diamond"><span class="es">Quiero Diamond</span><span class="en">I want Diamond</span></a>
       </article>
 
@@ -1407,7 +1417,7 @@
           <li class="yes"><span class="es">Stand de 3×2m en el salón principal</span><span class="en">3×2m stand in the main hall</span></li>
           <li class="yes"><span class="es">3 delegados incluidos</span><span class="en">3 delegates included</span></li>
         </ul>
-        <button type="button" class="gallery-link plan-render-link" data-render="platinum"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
+        <button type="button" class="plan-render-link" data-render="platinum"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Platinum"><span class="es">Quiero Platinum</span><span class="en">I want Platinum</span></a>
       </article>
 
@@ -1424,7 +1434,7 @@
           <li class="yes"><span class="es">Stand de 2×2m en zona expo</span><span class="en">2×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
         </ul>
-        <button type="button" class="gallery-link plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
+        <button type="button" class="plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Gold"><span class="es">Quiero Gold</span><span class="en">I want Gold</span></a>
       </article>
 
@@ -1441,7 +1451,7 @@
           <li class="yes"><span class="es">Stand de 2×2m en zona expo</span><span class="en">2×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">1 delegado incluido</span><span class="en">1 delegate included</span></li>
         </ul>
-        <button type="button" class="gallery-link plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
+        <button type="button" class="plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Silver"><span class="es">Quiero Silver</span><span class="en">I want Silver</span></a>
       </article>
     </div>
