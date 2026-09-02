@@ -498,16 +498,18 @@
   .plano-fig{ margin:0; border-radius:var(--radius-xl); overflow:hidden; cursor:pointer;
     background:#fff; box-shadow:0 1px 0 rgba(11,11,18,.06), 0 24px 56px rgba(20,20,40,.14); }
   .plano-fig img{ width:100%; display:block; transition:transform 500ms var(--ease-out); }
+  /* Two language versions of the same figure: only one is ever laid out, so the toggle
+     needs to win over the generic ".plano-fig img{display:block}" rule above. */
+  .plano-fig img.en{ display:none; }
+  html[data-lang="en"] .plano-fig img.es{ display:none; }
+  html[data-lang="en"] .plano-fig img.en{ display:block; }
   @media (hover:hover) and (pointer:fine){ .plano-fig:hover img{ transform:scale(1.015); } }
   .plano-fig figcaption{ padding:var(--space-4) var(--space-6); font-size:12.5px; color:rgba(11,11,18,.55); text-align:center; }
 
-  /* ---------- Stand renders: a button per tier opens that tier's photos in the lightbox ---------- */
-  .render-picker{ margin-top:var(--space-12); text-align:center; }
-  .render-btns{ display:flex; justify-content:center; gap:var(--space-4); flex-wrap:wrap; margin-top:var(--space-3); }
-  .render-dot{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:8px; vertical-align:middle; }
-  .render-hint{ margin-top:var(--space-4); font-size:12.5px; color:rgba(11,11,18,.5); }
-  #plano .btn-outline{ color:#0b0b12; border-color:rgba(11,11,18,.25); }
-  #plano .btn-outline:hover{ background:rgba(11,11,18,.06); border-color:rgba(11,11,18,.4); }
+  /* ---------- Per-tier "See the stand" link: opens that tier's renders in the lightbox ---------- */
+  .plan-render-link{ background:none; border:none; padding:0; margin-bottom:var(--space-4); cursor:pointer; font-family:var(--font-sans); }
+  #categorias .gallery-link{ color:var(--ko-blue); }
+  #categorias .gallery-link:hover{ color:#000; }
 
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -1388,6 +1390,7 @@
           <li class="yes"><span class="es">Stand premium de 4×3m</span><span class="en">4×3m premium stand</span></li>
           <li class="yes"><span class="es">4 delegados incluidos</span><span class="en">4 delegates included</span></li>
         </ul>
+        <button type="button" class="gallery-link plan-render-link" data-render="diamond"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-primary plan-cta" href="#contacto" data-tier-cta="Diamond"><span class="es">Quiero Diamond</span><span class="en">I want Diamond</span></a>
       </article>
 
@@ -1404,6 +1407,7 @@
           <li class="yes"><span class="es">Stand de 3×2m en el salón principal</span><span class="en">3×2m stand in the main hall</span></li>
           <li class="yes"><span class="es">3 delegados incluidos</span><span class="en">3 delegates included</span></li>
         </ul>
+        <button type="button" class="gallery-link plan-render-link" data-render="platinum"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Platinum"><span class="es">Quiero Platinum</span><span class="en">I want Platinum</span></a>
       </article>
 
@@ -1420,6 +1424,7 @@
           <li class="yes"><span class="es">Stand de 2×2m en zona expo</span><span class="en">2×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
         </ul>
+        <button type="button" class="gallery-link plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Gold"><span class="es">Quiero Gold</span><span class="en">I want Gold</span></a>
       </article>
 
@@ -1436,6 +1441,7 @@
           <li class="yes"><span class="es">Stand de 2×2m en zona expo</span><span class="en">2×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">1 delegado incluido</span><span class="en">1 delegate included</span></li>
         </ul>
+        <button type="button" class="gallery-link plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Silver"><span class="es">Quiero Silver</span><span class="en">I want Silver</span></a>
       </article>
     </div>
@@ -1467,19 +1473,10 @@
       <p><span class="es">Sector Auditorio Principal del Centro de Convenciones, con la ubicación de cada stand según categoría.</span><span class="en">Main Auditorium sector of the Convention Centre, with each stand's location by tier.</span></p>
     </div>
     <figure class="plano-fig reveal" id="planoFig">
-      <img src="media/plano/plano-auditorio-principal.jpg" alt="Plano del sector Auditorio Principal, Centro de Convenciones de Punta del Este" loading="lazy" decoding="async">
+      <img class="es" src="media/plano/plano-auditorio-principal-es.jpg" alt="Plano del sector Auditorio Principal, Centro de Convenciones de Punta del Este" loading="lazy" decoding="async">
+      <img class="en block" src="media/plano/plano-auditorio-principal-en.jpg" alt="Floor plan of the Main Auditorium sector, Punta del Este Convention Centre" loading="lazy" decoding="async">
       <figcaption><span class="es">Tocá la imagen para ampliarla.</span><span class="en">Tap the image to enlarge it.</span></figcaption>
     </figure>
-
-    <div class="render-picker reveal">
-      <p class="eyebrow"><span class="es">Renders de stands</span><span class="en">Stand renders</span></p>
-      <div class="render-btns">
-        <button type="button" class="btn btn-outline" data-render="diamond"><span class="render-dot" style="background:var(--ko-sky);" aria-hidden="true"></span>Diamond</button>
-        <button type="button" class="btn btn-outline" data-render="platinum"><span class="render-dot" style="background:var(--ko-ink-200);" aria-hidden="true"></span>Platinum</button>
-        <button type="button" class="btn btn-outline" data-render="goldsilver"><span class="render-dot" style="background:var(--ko-amber);" aria-hidden="true"></span>Gold / Silver</button>
-      </div>
-      <p class="render-hint"><span class="es">Cada render tiene más de una foto: usá las flechas del visor para recorrerlas.</span><span class="en">Each render has more than one photo: use the viewer's arrows to browse them.</span></p>
-    </div>
   </div>
 </section>
 
@@ -1525,7 +1522,7 @@
       <div class="ff ff-wide form-actions">
         <button type="submit" class="btn btn-primary"><span class="es">Enviar consulta</span><span class="en">Send enquiry</span></button>
       </div>
-      <p class="form-note" id="formNote"><span class="es">Si no se abrió tu cliente de correo, escribinos a <a href="mailto:vrey@latamconsultus.com,paulina@latamconsultus.com,felipe@latamconsultus.com">vrey@latamconsultus.com, paulina@latamconsultus.com y felipe@latamconsultus.com</a>.</span><span class="en">If your email client didn't open, write to <a href="mailto:vrey@latamconsultus.com,paulina@latamconsultus.com,felipe@latamconsultus.com">vrey@latamconsultus.com, paulina@latamconsultus.com and felipe@latamconsultus.com</a>.</span></p>
+      <p class="form-note" id="formNote"><span class="es">Si no se abrió tu cliente de correo, escribinos a <a href="mailto:vrey@latamconsultus.com?cc=felipe@latamconsultus.com,paulina@latamconsultus.com">vrey@latamconsultus.com</a> (con copia a felipe@latamconsultus.com y paulina@latamconsultus.com).</span><span class="en">If your email client didn't open, write to <a href="mailto:vrey@latamconsultus.com?cc=felipe@latamconsultus.com,paulina@latamconsultus.com">vrey@latamconsultus.com</a> (cc felipe@latamconsultus.com and paulina@latamconsultus.com).</span></p>
     </form>
     <p class="meta-line">
       <span class="es">LATAM ConsultUs · Kick Off 2027 · Punta del Este, Uruguay · 23–25 de febrero</span>
@@ -1812,8 +1809,9 @@
   var planoFig = document.getElementById('planoFig');
   if (planoFig) {
     planoFig.addEventListener('click', function () {
-      var src = planoFig.querySelector('img').getAttribute('src');
-      openLightbox([src], 0);
+      var isEn = document.documentElement.getAttribute('data-lang') === 'en';
+      var img = planoFig.querySelector(isEn ? 'img.en' : 'img.es');
+      openLightbox([img.getAttribute('src')], 0);
     });
   }
 
@@ -1944,7 +1942,8 @@
   });
 
   /* ---------- Contact form → pre-filled email to the commercial team ---------- */
-  var TEAM = ['vrey@latamconsultus.com', 'paulina@latamconsultus.com', 'felipe@latamconsultus.com'];
+  var TEAM_TO = 'vrey@latamconsultus.com';
+  var TEAM_CC = ['felipe@latamconsultus.com', 'paulina@latamconsultus.com'];
   var form = document.getElementById('sponsorForm');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -1966,8 +1965,9 @@
            'Categoría de interés: ' + (tier || 'a definir'), '', 'Mensaje:', message || '(sin mensaje)', '',
            'Enviado desde la propuesta de sponsors del Kick Off 2027'];
 
-      var href = 'mailto:' + TEAM.join(',') +
-        '?subject=' + encodeURIComponent(subject) +
+      var href = 'mailto:' + TEAM_TO +
+        '?cc=' + encodeURIComponent(TEAM_CC.join(',')) +
+        '&subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(lines.join('\n'));
 
       /* Open through a real anchor rather than assigning location: browsers treat this
