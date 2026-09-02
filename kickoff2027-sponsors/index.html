@@ -397,14 +397,14 @@
   .firms-wall .list span{ font-size:14.5px; font-weight:var(--fw-medium); color:var(--text-secondary); letter-spacing:.01em; transition:color var(--dur-fast) var(--ease-standard); }
   .firms-wall .list span:hover{ color:#fff; }
 
-  /* ---------- Sponsorship plans: pick-a-plan cards, each with its own CTA ---------- */
-  /* minmax(0,1fr) — plain 1fr lets the widest card's content stretch its column. */
-  .plans{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--space-5); align-items:stretch; }
-  .plan{ position:relative; display:flex; flex-direction:column; padding:var(--space-6);
+  /* ---------- Sponsorship plans: one row per tier, category info left / stand photo right ---------- */
+  .plans{ display:flex; flex-direction:column; gap:var(--space-5); }
+  .plan{ position:relative; display:flex; align-items:stretch; gap:var(--space-6); padding:var(--space-6);
     border-radius:var(--radius-lg); box-shadow:var(--inset-hairline);
     background:linear-gradient(168deg, rgba(255,255,255,.06), rgba(8,8,12,.52));
     backdrop-filter:blur(6px);
     transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+  .plan-body{ flex:1; min-width:0; display:flex; flex-direction:column; }
   .plan-diamond{ box-shadow:inset 0 0 0 1px rgba(74,163,238,.55), 0 24px 60px rgba(0,0,0,.44);
     background:linear-gradient(168deg, rgba(74,163,238,.16), rgba(8,8,12,.56)); }
   @media (hover:hover) and (pointer:fine){
@@ -439,8 +439,13 @@
   .plan-silver .plan-list li.yes::before{ color:var(--ko-ink-200); }
   .plan-cta{ justify-content:center; width:100%; }
   .plan.is-picked{ box-shadow:inset 0 0 0 2px var(--ko-sky), 0 26px 60px rgba(0,0,0,.46); }
-  @media (max-width:1000px){ .plans{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:620px){ .plans{ grid-template-columns:1fr; } }
+  .plan-stand{ flex:0 0 260px; align-self:stretch; border-radius:var(--radius-lg); overflow:hidden; }
+  .plan-stand .stand-photo{ height:100%; min-height:220px; }
+  @media (max-width:900px){
+    .plan{ flex-direction:column; }
+    .plan-stand{ flex:none; width:100%; }
+    .plan-stand .stand-photo{ height:200px; }
+  }
 
   .tiers-note{ margin-top:var(--space-6); font-size:13px; color:var(--text-secondary); }
 
@@ -513,33 +518,18 @@
   @media (hover:hover) and (pointer:fine){ .plano-fig:hover img{ transform:scale(1.015); } }
   .plano-fig figcaption{ padding:var(--space-4) var(--space-6); font-size:12.5px; color:rgba(11,11,18,.55); text-align:center; }
 
-  /* ---------- Stand rows: tier name beside its photo carousel, arrows to flip through it ---------- */
-  .stand-grid{ display:flex; flex-direction:column; gap:var(--space-5); margin-top:var(--space-10); }
-  .stand-card{ display:flex; align-items:stretch; border-radius:var(--radius-xl); overflow:hidden; background:#fff;
-    box-shadow:0 1px 0 rgba(11,11,18,.06), 0 20px 44px rgba(20,20,40,.12); }
-  .stand-card h3{ flex:0 0 200px; display:flex; align-items:center; gap:var(--space-3);
-    padding:var(--space-5) var(--space-6); font-size:19px; font-weight:var(--fw-semibold); color:#0b0b12; }
-  .stand-card h3::before{ content:""; width:9px; height:9px; border-radius:50%; flex:none; }
-  .stand-card[data-tier="diamond"] h3::before{ background:var(--ko-sky); box-shadow:0 0 12px rgba(74,163,238,.85); }
-  .stand-card[data-tier="platinum"] h3::before{ background:var(--ko-ink-300); }
-  .stand-card[data-tier="gold"] h3::before{ background:var(--ko-amber); }
-  .stand-card[data-tier="silver"] h3::before{ background:rgba(11,11,18,.35); }
-  .stand-photo{ position:relative; flex:1; min-width:0; height:220px; overflow:hidden; background:#08080c; cursor:pointer; }
+  /* ---------- Stand photo inside each pricing card: a carousel with its own arrows ---------- */
+  .stand-photo{ position:relative; overflow:hidden; background:#08080c; cursor:pointer; }
   .stand-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .stand-nav{ position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px;
+  .stand-nav{ position:absolute; top:50%; transform:translateY(-50%); width:30px; height:30px;
     border-radius:50%; border:none; background:rgba(8,8,12,.5); backdrop-filter:blur(4px);
-    color:#fff; font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:16px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
     transition:background var(--dur-fast) var(--ease-standard); }
   .stand-nav:hover{ background:rgba(8,8,12,.75); }
-  .stand-nav.prev{ left:10px; } .stand-nav.next{ right:10px; }
-  .stand-dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:6px; }
+  .stand-nav.prev{ left:8px; } .stand-nav.next{ right:8px; }
+  .stand-dots{ position:absolute; left:0; right:0; bottom:8px; display:flex; justify-content:center; gap:6px; }
   .stand-dots span{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.4); }
   .stand-dots span.on{ background:#fff; }
-  @media (max-width:700px){
-    .stand-card{ flex-direction:column; }
-    .stand-card h3{ flex:none; padding:var(--space-4) var(--space-5); }
-    .stand-photo{ height:200px; }
-  }
 
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -1408,71 +1398,111 @@
     <div class="plans reveal stagger">
       <article class="plan plan-diamond">
         <span class="plan-flag"><span class="es">Máxima exposición</span><span class="en">Widest reach</span></span>
-        <header>
-          <span class="plan-dot" aria-hidden="true"></span>
-          <h3>Diamond</h3>
-          <p class="plan-sub"><span class="es">El único con escenario principal</span><span class="en">The only tier with the main stage</span></p>
-          <p class="plan-price"><span class="es"><span class="cur">USD</span>$35.000</span><span class="en"><span class="cur">USD</span>$35,000</span></p>
-        </header>
-        <ul class="plan-list">
-          <li class="yes"><span class="es">Masterclass de 30 min en el salón principal</span><span class="en">30-min Masterclass in the main hall</span></li>
-          <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
-          <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
-          <li class="yes"><span class="es">Stand premium de 6×3m en zona foyer</span><span class="en">6×3m premium stand in the foyer area</span></li>
-          <li class="yes"><span class="es">4 delegados incluidos</span><span class="en">4 delegates included</span></li>
-        </ul>
-        <a class="btn btn-primary plan-cta" href="#contacto" data-tier-cta="Diamond"><span class="es">Quiero Diamond</span><span class="en">I want Diamond</span></a>
+        <div class="plan-body">
+          <header>
+            <span class="plan-dot" aria-hidden="true"></span>
+            <h3>Diamond</h3>
+            <p class="plan-sub"><span class="es">El único con escenario principal</span><span class="en">The only tier with the main stage</span></p>
+            <p class="plan-price"><span class="es"><span class="cur">USD</span>$35.000</span><span class="en"><span class="cur">USD</span>$35,000</span></p>
+          </header>
+          <ul class="plan-list">
+            <li class="yes"><span class="es">Masterclass de 30 min en el salón principal</span><span class="en">30-min Masterclass in the main hall</span></li>
+            <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
+            <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
+            <li class="yes"><span class="es">Stand premium de 6×3m en zona foyer</span><span class="en">6×3m premium stand in the foyer area</span></li>
+            <li class="yes"><span class="es">4 delegados incluidos</span><span class="en">4 delegates included</span></li>
+          </ul>
+          <a class="btn btn-primary plan-cta" href="#contacto" data-tier-cta="Diamond"><span class="es">Quiero Diamond</span><span class="en">I want Diamond</span></a>
+        </div>
+        <div class="plan-stand" data-render="diamond">
+          <div class="stand-photo">
+            <img src="media/stands/diamond-1.jpg" alt="Stand Diamond" loading="lazy" decoding="async">
+            <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+            <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+            <div class="stand-dots"></div>
+          </div>
+        </div>
       </article>
 
       <article class="plan plan-platinum">
-        <header>
-          <span class="plan-dot" aria-hidden="true"></span>
-          <h3>Platinum</h3>
-          <p class="plan-sub"><span class="es">Dos formatos + stand en zona expo</span><span class="en">Two formats + a stand in the expo area</span></p>
-          <p class="plan-price"><span class="es"><span class="cur">USD</span>$30.000</span><span class="en"><span class="cur">USD</span>$30,000</span></p>
-        </header>
-        <ul class="plan-list">
-          <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
-          <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
-          <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
-          <li class="yes"><span class="es">Stand de 4×3m en zona expo</span><span class="en">4×3m stand in the expo area</span></li>
-          <li class="yes"><span class="es">3 delegados incluidos</span><span class="en">3 delegates included</span></li>
-        </ul>
-        <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Platinum"><span class="es">Quiero Platinum</span><span class="en">I want Platinum</span></a>
+        <div class="plan-body">
+          <header>
+            <span class="plan-dot" aria-hidden="true"></span>
+            <h3>Platinum</h3>
+            <p class="plan-sub"><span class="es">Dos formatos + stand en zona expo</span><span class="en">Two formats + a stand in the expo area</span></p>
+            <p class="plan-price"><span class="es"><span class="cur">USD</span>$30.000</span><span class="en"><span class="cur">USD</span>$30,000</span></p>
+          </header>
+          <ul class="plan-list">
+            <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
+            <li class="yes"><span class="es">Hub temático de 20 min</span><span class="en">20-min thematic Hub</span></li>
+            <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
+            <li class="yes"><span class="es">Stand de 4×3m en zona expo</span><span class="en">4×3m stand in the expo area</span></li>
+            <li class="yes"><span class="es">3 delegados incluidos</span><span class="en">3 delegates included</span></li>
+          </ul>
+          <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Platinum"><span class="es">Quiero Platinum</span><span class="en">I want Platinum</span></a>
+        </div>
+        <div class="plan-stand" data-render="platinum">
+          <div class="stand-photo">
+            <img src="media/stands/platinum-1.jpg" alt="Stand Platinum" loading="lazy" decoding="async">
+            <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+            <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+            <div class="stand-dots"></div>
+          </div>
+        </div>
       </article>
 
       <article class="plan plan-gold">
-        <header>
-          <span class="plan-dot" aria-hidden="true"></span>
-          <h3>Gold</h3>
-          <p class="plan-sub"><span class="es">Un formato de contenido + stand en foyer</span><span class="en">One content slot + a foyer stand</span></p>
-          <p class="plan-price"><span class="es"><span class="cur">USD</span>$25.000</span><span class="en"><span class="cur">USD</span>$25,000</span></p>
-        </header>
-        <ul class="plan-list">
-          <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
-          <li class="no"><span class="es">Hub temático</span><span class="en">Thematic Hub</span></li>
-          <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
-          <li class="yes"><span class="es">Stand de 3×2m en zona foyer</span><span class="en">3×2m stand in the foyer area</span></li>
-          <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
-        </ul>
-        <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Gold"><span class="es">Quiero Gold</span><span class="en">I want Gold</span></a>
+        <div class="plan-body">
+          <header>
+            <span class="plan-dot" aria-hidden="true"></span>
+            <h3>Gold</h3>
+            <p class="plan-sub"><span class="es">Un formato de contenido + stand en foyer</span><span class="en">One content slot + a foyer stand</span></p>
+            <p class="plan-price"><span class="es"><span class="cur">USD</span>$25.000</span><span class="en"><span class="cur">USD</span>$25,000</span></p>
+          </header>
+          <ul class="plan-list">
+            <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
+            <li class="no"><span class="es">Hub temático</span><span class="en">Thematic Hub</span></li>
+            <li class="yes"><span class="es">Mesa Redonda de 20 min</span><span class="en">20-min Round Table</span></li>
+            <li class="yes"><span class="es">Stand de 3×2m en zona foyer</span><span class="en">3×2m stand in the foyer area</span></li>
+            <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
+          </ul>
+          <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Gold"><span class="es">Quiero Gold</span><span class="en">I want Gold</span></a>
+        </div>
+        <div class="plan-stand" data-render="goldsilver">
+          <div class="stand-photo">
+            <img src="media/stands/goldsilver-1.jpg" alt="Stand Gold" loading="lazy" decoding="async">
+            <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+            <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+            <div class="stand-dots"></div>
+          </div>
+        </div>
       </article>
 
       <article class="plan plan-silver">
-        <header>
-          <span class="plan-dot" aria-hidden="true"></span>
-          <h3>Silver</h3>
-          <p class="plan-sub"><span class="es">Presencia con stand en zona expo</span><span class="en">Stand presence in the expo area</span></p>
-          <p class="plan-price"><span class="es"><span class="cur">USD</span>$20.000</span><span class="en"><span class="cur">USD</span>$20,000</span></p>
-        </header>
-        <ul class="plan-list">
-          <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
-          <li class="no"><span class="es">Hub temático</span><span class="en">Thematic Hub</span></li>
-          <li class="no"><span class="es">Mesa Redonda</span><span class="en">Round Table</span></li>
-          <li class="yes"><span class="es">Stand de 3×2m en zona expo</span><span class="en">3×2m stand in the expo area</span></li>
-          <li class="yes"><span class="es">1 delegado incluido</span><span class="en">1 delegate included</span></li>
-        </ul>
-        <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Silver"><span class="es">Quiero Silver</span><span class="en">I want Silver</span></a>
+        <div class="plan-body">
+          <header>
+            <span class="plan-dot" aria-hidden="true"></span>
+            <h3>Silver</h3>
+            <p class="plan-sub"><span class="es">Presencia con stand en zona expo</span><span class="en">Stand presence in the expo area</span></p>
+            <p class="plan-price"><span class="es"><span class="cur">USD</span>$20.000</span><span class="en"><span class="cur">USD</span>$20,000</span></p>
+          </header>
+          <ul class="plan-list">
+            <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
+            <li class="no"><span class="es">Hub temático</span><span class="en">Thematic Hub</span></li>
+            <li class="no"><span class="es">Mesa Redonda</span><span class="en">Round Table</span></li>
+            <li class="yes"><span class="es">Stand de 3×2m en zona expo</span><span class="en">3×2m stand in the expo area</span></li>
+            <li class="yes"><span class="es">1 delegado incluido</span><span class="en">1 delegate included</span></li>
+          </ul>
+          <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Silver"><span class="es">Quiero Silver</span><span class="en">I want Silver</span></a>
+        </div>
+        <div class="plan-stand" data-render="goldsilver">
+          <div class="stand-photo">
+            <img src="media/stands/goldsilver-1.jpg" alt="Stand Silver" loading="lazy" decoding="async">
+            <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+            <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+            <div class="stand-dots"></div>
+          </div>
+        </div>
       </article>
     </div>
 
@@ -1498,49 +1528,6 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <hr class="accent">
-      <p class="eyebrow"><span class="es">Así son los stands</span><span class="en">What the stands look like</span></p>
-      <h2><span class="es">Un vistazo a cada categoría.</span><span class="en">A look at each tier.</span></h2>
-    </div>
-    <div class="stand-grid reveal stagger">
-      <div class="stand-card" data-render="diamond" data-tier="diamond">
-        <h3>Stand Diamond</h3>
-        <div class="stand-photo">
-          <img src="media/stands/diamond-1.jpg" alt="Stand Diamond" loading="lazy" decoding="async">
-          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
-          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
-          <div class="stand-dots"></div>
-        </div>
-      </div>
-      <div class="stand-card" data-render="platinum" data-tier="platinum">
-        <h3>Stand Platinum</h3>
-        <div class="stand-photo">
-          <img src="media/stands/platinum-1.jpg" alt="Stand Platinum" loading="lazy" decoding="async">
-          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
-          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
-          <div class="stand-dots"></div>
-        </div>
-      </div>
-      <div class="stand-card" data-render="goldsilver" data-tier="gold">
-        <h3>Stand Gold</h3>
-        <div class="stand-photo">
-          <img src="media/stands/goldsilver-1.jpg" alt="Stand Gold" loading="lazy" decoding="async">
-          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
-          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
-          <div class="stand-dots"></div>
-        </div>
-      </div>
-      <div class="stand-card" data-render="goldsilver" data-tier="silver">
-        <h3>Stand Silver</h3>
-        <div class="stand-photo">
-          <img src="media/stands/goldsilver-1.jpg" alt="Stand Silver" loading="lazy" decoding="async">
-          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
-          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
-          <div class="stand-dots"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec-head reveal" style="margin-top:var(--space-16);">
       <p class="eyebrow"><span class="es">Plano del predio</span><span class="en">Venue floor plan</span></p>
       <h2><span class="es">Así se distribuyen los stands.</span><span class="en">Here's how the stands are laid out.</span></h2>
       <p><span class="es">Sector Auditorio Principal del Centro de Convenciones, con la ubicación de cada stand según categoría.</span><span class="en">Main Auditorium sector of the Convention Centre, with each stand's location by tier.</span></p>
@@ -1888,14 +1875,14 @@
     });
   }
 
-  /* ---------- Stand quadrants: a tiny carousel per card, with its own prev/next arrows.
+  /* ---------- Stand photo per pricing card: a tiny carousel with its own prev/next arrows.
        Clicking the photo itself still opens the shared lightbox for a bigger look. ---------- */
   var STAND_RENDERS = {
     diamond: ['media/stands/diamond-1.jpg', 'media/stands/diamond-2.jpg'],
     platinum: ['media/stands/platinum-1.jpg', 'media/stands/platinum-2.jpg'],
     goldsilver: ['media/stands/goldsilver-1.jpg', 'media/stands/goldsilver-2.jpg']
   };
-  document.querySelectorAll('.stand-card').forEach(function (card) {
+  document.querySelectorAll('.plan-stand').forEach(function (card) {
     var photos = STAND_RENDERS[card.getAttribute('data-render')];
     if (!photos || !photos.length) return;
     var img = card.querySelector('.stand-photo img');
