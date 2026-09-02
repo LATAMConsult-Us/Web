@@ -506,20 +506,23 @@
   @media (hover:hover) and (pointer:fine){ .plano-fig:hover img{ transform:scale(1.015); } }
   .plano-fig figcaption{ padding:var(--space-4) var(--space-6); font-size:12.5px; color:rgba(11,11,18,.55); text-align:center; }
 
-  /* ---------- Per-tier "See the stand" button: opens that tier's renders in the lightbox.
-       A full-width secondary pill, same width as the CTA below it, so it reads as a real
-       action rather than a fine-print link that gets lost next to the checklist. ---------- */
-  .plan-render-link{
-    display:flex; align-items:center; justify-content:center; gap:7px; width:100%;
-    padding:11px 16px; margin:0 0 var(--space-3);
-    border:1px solid rgba(11,92,219,.35); border-radius:var(--radius-pill);
-    background:rgba(11,92,219,.07);
-    font-family:var(--font-sans); font-size:13.5px; font-weight:var(--fw-semibold);
-    color:var(--ko-blue); cursor:pointer;
-    transition:background var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
-  }
-  .plan-render-link:hover{ background:rgba(11,92,219,.14); border-color:rgba(11,92,219,.55); }
-  .plan-render-link:active{ transform:scale(.985); }
+  /* ---------- Stand quadrants: one photo carousel per tier, arrows to flip through it ---------- */
+  .stand-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-6); margin-top:var(--space-10); }
+  .stand-card{ border-radius:var(--radius-xl); overflow:hidden; background:#fff;
+    box-shadow:0 1px 0 rgba(11,11,18,.06), 0 20px 44px rgba(20,20,40,.12); }
+  .stand-photo{ position:relative; aspect-ratio:16/10; overflow:hidden; background:#08080c; cursor:pointer; }
+  .stand-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .stand-nav{ position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px;
+    border-radius:50%; border:none; background:rgba(8,8,12,.5); backdrop-filter:blur(4px);
+    color:#fff; font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:background var(--dur-fast) var(--ease-standard); }
+  .stand-nav:hover{ background:rgba(8,8,12,.75); }
+  .stand-nav.prev{ left:10px; } .stand-nav.next{ right:10px; }
+  .stand-dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:6px; }
+  .stand-dots span{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.4); }
+  .stand-dots span.on{ background:#fff; }
+  .stand-card h3{ padding:var(--space-4) var(--space-5); font-size:16px; font-weight:var(--fw-semibold); color:#0b0b12; }
+  @media (max-width:700px){ .stand-grid{ grid-template-columns:1fr; } }
 
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -1400,7 +1403,6 @@
           <li class="yes"><span class="es">Stand premium de 6×3m</span><span class="en">6×3m premium stand</span></li>
           <li class="yes"><span class="es">4 delegados incluidos</span><span class="en">4 delegates included</span></li>
         </ul>
-        <button type="button" class="plan-render-link" data-render="diamond"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-primary plan-cta" href="#contacto" data-tier-cta="Diamond"><span class="es">Quiero Diamond</span><span class="en">I want Diamond</span></a>
       </article>
 
@@ -1417,7 +1419,6 @@
           <li class="yes"><span class="es">Stand de 4×3m en el salón principal</span><span class="en">4×3m stand in the main hall</span></li>
           <li class="yes"><span class="es">3 delegados incluidos</span><span class="en">3 delegates included</span></li>
         </ul>
-        <button type="button" class="plan-render-link" data-render="platinum"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Platinum"><span class="es">Quiero Platinum</span><span class="en">I want Platinum</span></a>
       </article>
 
@@ -1434,7 +1435,6 @@
           <li class="yes"><span class="es">Stand de 3×2m en zona expo</span><span class="en">3×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">2 delegados incluidos</span><span class="en">2 delegates included</span></li>
         </ul>
-        <button type="button" class="plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Gold"><span class="es">Quiero Gold</span><span class="en">I want Gold</span></a>
       </article>
 
@@ -1451,7 +1451,6 @@
           <li class="yes"><span class="es">Stand de 3×2m en zona expo</span><span class="en">3×2m stand in the expo area</span></li>
           <li class="yes"><span class="es">1 delegado incluido</span><span class="en">1 delegate included</span></li>
         </ul>
-        <button type="button" class="plan-render-link" data-render="goldsilver"><span class="es">Ver el stand</span><span class="en">See the stand</span> ↗</button>
         <a class="btn btn-outline plan-cta" href="#contacto" data-tier-cta="Silver"><span class="es">Quiero Silver</span><span class="en">I want Silver</span></a>
       </article>
     </div>
@@ -1487,6 +1486,49 @@
       <img class="en block" src="media/plano/plano-auditorio-principal-en.jpg" alt="Floor plan of the Main Auditorium sector, Punta del Este Convention Centre" loading="lazy" decoding="async">
       <figcaption><span class="es">Tocá la imagen para ampliarla.</span><span class="en">Tap the image to enlarge it.</span></figcaption>
     </figure>
+
+    <div class="sec-head reveal" style="margin-top:var(--space-16);">
+      <p class="eyebrow"><span class="es">Así son los stands</span><span class="en">What the stands look like</span></p>
+      <h2><span class="es">Un vistazo a cada categoría.</span><span class="en">A look at each tier.</span></h2>
+    </div>
+    <div class="stand-grid reveal stagger">
+      <div class="stand-card" data-render="diamond">
+        <div class="stand-photo">
+          <img src="media/stands/diamond-1.jpg" alt="Stand Diamond" loading="lazy" decoding="async">
+          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+          <div class="stand-dots"></div>
+        </div>
+        <h3>Stand Diamond</h3>
+      </div>
+      <div class="stand-card" data-render="platinum">
+        <div class="stand-photo">
+          <img src="media/stands/platinum-1.jpg" alt="Stand Platinum" loading="lazy" decoding="async">
+          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+          <div class="stand-dots"></div>
+        </div>
+        <h3>Stand Platinum</h3>
+      </div>
+      <div class="stand-card" data-render="goldsilver">
+        <div class="stand-photo">
+          <img src="media/stands/goldsilver-1.jpg" alt="Stand Gold" loading="lazy" decoding="async">
+          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+          <div class="stand-dots"></div>
+        </div>
+        <h3>Stand Gold</h3>
+      </div>
+      <div class="stand-card" data-render="goldsilver">
+        <div class="stand-photo">
+          <img src="media/stands/goldsilver-1.jpg" alt="Stand Silver" loading="lazy" decoding="async">
+          <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
+          <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
+          <div class="stand-dots"></div>
+        </div>
+        <h3>Stand Silver</h3>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1825,18 +1867,33 @@
     });
   }
 
-  /* ---------- Stand renders: each tier button opens its photos in the same lightbox,
-       so the existing prev/next arrows double as "more photos" for that stand. ---------- */
+  /* ---------- Stand quadrants: a tiny carousel per card, with its own prev/next arrows.
+       Clicking the photo itself still opens the shared lightbox for a bigger look. ---------- */
   var STAND_RENDERS = {
     diamond: ['media/stands/diamond-1.jpg', 'media/stands/diamond-2.jpg'],
     platinum: ['media/stands/platinum-1.jpg', 'media/stands/platinum-2.jpg'],
     goldsilver: ['media/stands/goldsilver-1.jpg', 'media/stands/goldsilver-2.jpg']
   };
-  document.querySelectorAll('[data-render]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var set = STAND_RENDERS[btn.getAttribute('data-render')];
-      if (set) openLightbox(set, 0);
+  document.querySelectorAll('.stand-card').forEach(function (card) {
+    var photos = STAND_RENDERS[card.getAttribute('data-render')];
+    if (!photos || !photos.length) return;
+    var img = card.querySelector('.stand-photo img');
+    var dotsHost = card.querySelector('.stand-dots');
+    var dots = photos.map(function (_, i) {
+      var d = document.createElement('span');
+      dotsHost.appendChild(d);
+      return d;
     });
+    var idx = 0;
+    function show(i) {
+      idx = (i + photos.length) % photos.length;
+      img.setAttribute('src', photos[idx]);
+      dots.forEach(function (d, n) { d.classList.toggle('on', n === idx); });
+    }
+    card.querySelector('.stand-nav.prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+    card.querySelector('.stand-nav.next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+    card.querySelector('.stand-photo').addEventListener('click', function () { openLightbox(photos, idx); });
+    show(0);
   });
 
   /* ---------- Cross-fading photo panel with Ken Burns drift ---------- */
