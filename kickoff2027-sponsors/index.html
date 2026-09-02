@@ -1963,9 +1963,12 @@
       var tier = get('fTier'), message = get('fMessage');
       var en = document.documentElement.getAttribute('data-lang') === 'en';
 
+      /* Company + tier go right in the subject line, so whoever opens their inbox sees
+         who it's from and what stand they want without opening the email. */
+      var subjectTag = [company, tier].filter(Boolean).join(' · ');
       var subject = en
-        ? 'Kick Off 2027: sponsorship enquiry' + (tier ? ' (' + tier + ')' : '')
-        : 'Kick Off 2027: consulta de patrocinio' + (tier ? ' (' + tier + ')' : '');
+        ? 'Kick Off 2027 sponsorship enquiry' + (subjectTag ? ': ' + subjectTag : '')
+        : 'Kick Off 2027 consulta de patrocinio' + (subjectTag ? ': ' + subjectTag : '');
 
       var lines = en
         ? ['Name: ' + name, 'Company: ' + company, 'Email: ' + email,
