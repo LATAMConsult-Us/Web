@@ -424,7 +424,8 @@
   .plan h3{ font-size:21px; font-weight:var(--fw-semibold); color:#fff; letter-spacing:.01em; }
   .plan-diamond h3{ color:var(--ko-sky); }
   .plan .plan-sub{ margin-top:var(--space-2); font-size:13px; line-height:1.5; color:var(--text-secondary); }
-  .plan .plan-price{ margin-top:var(--space-4); font-size:26px; font-weight:var(--fw-bold); color:#fff; letter-spacing:.01em; }
+  .plan .plan-price{ margin-top:var(--space-4); font-size:21px; font-weight:var(--fw-medium); color:#fff; letter-spacing:-.005em; }
+  .plan .plan-price .cur{ font-size:11px; font-weight:var(--fw-semibold); letter-spacing:.08em; color:var(--text-muted); margin-right:5px; }
   .plan-diamond .plan-price{ color:var(--ko-sky); }
   .plan-gold .plan-price{ color:var(--ko-amber); }
   .plan-list{ list-style:none; margin:0 0 var(--space-6); padding:0; display:flex; flex-direction:column; gap:var(--space-3); flex:1; }
@@ -477,6 +478,7 @@
   #categorias .plan-diamond h3{ color:var(--ko-blue); }
   #categorias .plan-sub{ color:rgba(11,11,18,.65); }
   #categorias .plan-price{ color:#0b0b12; }
+  #categorias .plan-price .cur{ color:rgba(11,11,18,.45); }
   #categorias .plan-diamond .plan-price{ color:var(--ko-blue); }
   #categorias .plan header{ border-bottom-color:rgba(11,11,18,.12); }
   #categorias .plan-list li{ color:#1a1a26; }
@@ -1400,7 +1402,7 @@
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Diamond</h3>
           <p class="plan-sub"><span class="es">El único con escenario principal</span><span class="en">The only tier with the main stage</span></p>
-          <p class="plan-price"><span class="es">USD $35.000</span><span class="en">USD $35,000</span></p>
+          <p class="plan-price"><span class="es"><span class="cur">USD</span>$35.000</span><span class="en"><span class="cur">USD</span>$35,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="yes"><span class="es">Masterclass de 30 min en el salón principal</span><span class="en">30-min Masterclass in the main hall</span></li>
@@ -1417,7 +1419,7 @@
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Platinum</h3>
           <p class="plan-sub"><span class="es">Dos formatos + stand en zona expo</span><span class="en">Two formats + a stand in the expo area</span></p>
-          <p class="plan-price"><span class="es">USD $30.000</span><span class="en">USD $30,000</span></p>
+          <p class="plan-price"><span class="es"><span class="cur">USD</span>$30.000</span><span class="en"><span class="cur">USD</span>$30,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
@@ -1434,7 +1436,7 @@
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Gold</h3>
           <p class="plan-sub"><span class="es">Un formato de contenido + stand en foyer</span><span class="en">One content slot + a foyer stand</span></p>
-          <p class="plan-price"><span class="es">USD $25.000</span><span class="en">USD $25,000</span></p>
+          <p class="plan-price"><span class="es"><span class="cur">USD</span>$25.000</span><span class="en"><span class="cur">USD</span>$25,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
@@ -1451,7 +1453,7 @@
           <span class="plan-dot" aria-hidden="true"></span>
           <h3>Silver</h3>
           <p class="plan-sub"><span class="es">Presencia con stand en zona expo</span><span class="en">Stand presence in the expo area</span></p>
-          <p class="plan-price"><span class="es">USD $20.000</span><span class="en">USD $20,000</span></p>
+          <p class="plan-price"><span class="es"><span class="cur">USD</span>$20.000</span><span class="en"><span class="cur">USD</span>$20,000</span></p>
         </header>
         <ul class="plan-list">
           <li class="no"><span class="es">Masterclass</span><span class="en">Masterclass</span></li>
@@ -1486,17 +1488,6 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <hr class="accent">
-      <p class="eyebrow"><span class="es">Plano del predio</span><span class="en">Venue floor plan</span></p>
-      <h2><span class="es">Así se distribuyen los stands.</span><span class="en">Here's how the stands are laid out.</span></h2>
-      <p><span class="es">Sector Auditorio Principal del Centro de Convenciones, con la ubicación de cada stand según categoría.</span><span class="en">Main Auditorium sector of the Convention Centre, with each stand's location by tier.</span></p>
-    </div>
-    <figure class="plano-fig reveal" id="planoFig">
-      <img class="es" src="media/plano/plano-auditorio-principal-es.jpg" alt="Plano del sector Auditorio Principal, Centro de Convenciones de Punta del Este" loading="lazy" decoding="async">
-      <img class="en block" src="media/plano/plano-auditorio-principal-en.jpg" alt="Floor plan of the Main Auditorium sector, Punta del Este Convention Centre" loading="lazy" decoding="async">
-      <figcaption><span class="es">Tocá la imagen para ampliarla.</span><span class="en">Tap the image to enlarge it.</span></figcaption>
-    </figure>
-
-    <div class="sec-head reveal" style="margin-top:var(--space-16);">
       <p class="eyebrow"><span class="es">Así son los stands</span><span class="en">What the stands look like</span></p>
       <h2><span class="es">Un vistazo a cada categoría.</span><span class="en">A look at each tier.</span></h2>
     </div>
@@ -1538,6 +1529,17 @@
         <h3>Stand Silver</h3>
       </div>
     </div>
+
+    <div class="sec-head reveal" style="margin-top:var(--space-16);">
+      <p class="eyebrow"><span class="es">Plano del predio</span><span class="en">Venue floor plan</span></p>
+      <h2><span class="es">Así se distribuyen los stands.</span><span class="en">Here's how the stands are laid out.</span></h2>
+      <p><span class="es">Sector Auditorio Principal del Centro de Convenciones, con la ubicación de cada stand según categoría.</span><span class="en">Main Auditorium sector of the Convention Centre, with each stand's location by tier.</span></p>
+    </div>
+    <figure class="plano-fig reveal" id="planoFig">
+      <img class="es" src="media/plano/plano-auditorio-principal-es.jpg" alt="Plano del sector Auditorio Principal, Centro de Convenciones de Punta del Este" loading="lazy" decoding="async">
+      <img class="en block" src="media/plano/plano-auditorio-principal-en.jpg" alt="Floor plan of the Main Auditorium sector, Punta del Este Convention Centre" loading="lazy" decoding="async">
+      <figcaption><span class="es">Tocá la imagen para ampliarla.</span><span class="en">Tap the image to enlarge it.</span></figcaption>
+    </figure>
   </div>
 </section>
 
