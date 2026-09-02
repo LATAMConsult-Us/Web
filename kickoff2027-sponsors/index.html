@@ -513,11 +513,18 @@
   @media (hover:hover) and (pointer:fine){ .plano-fig:hover img{ transform:scale(1.015); } }
   .plano-fig figcaption{ padding:var(--space-4) var(--space-6); font-size:12.5px; color:rgba(11,11,18,.55); text-align:center; }
 
-  /* ---------- Stand quadrants: one photo carousel per tier, arrows to flip through it ---------- */
-  .stand-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-6); margin-top:var(--space-10); }
-  .stand-card{ border-radius:var(--radius-xl); overflow:hidden; background:#fff;
+  /* ---------- Stand rows: tier name beside its photo carousel, arrows to flip through it ---------- */
+  .stand-grid{ display:flex; flex-direction:column; gap:var(--space-5); margin-top:var(--space-10); }
+  .stand-card{ display:flex; align-items:stretch; border-radius:var(--radius-xl); overflow:hidden; background:#fff;
     box-shadow:0 1px 0 rgba(11,11,18,.06), 0 20px 44px rgba(20,20,40,.12); }
-  .stand-photo{ position:relative; aspect-ratio:16/10; overflow:hidden; background:#08080c; cursor:pointer; }
+  .stand-card h3{ flex:0 0 200px; display:flex; align-items:center; gap:var(--space-3);
+    padding:var(--space-5) var(--space-6); font-size:19px; font-weight:var(--fw-semibold); color:#0b0b12; }
+  .stand-card h3::before{ content:""; width:9px; height:9px; border-radius:50%; flex:none; }
+  .stand-card[data-tier="diamond"] h3::before{ background:var(--ko-sky); box-shadow:0 0 12px rgba(74,163,238,.85); }
+  .stand-card[data-tier="platinum"] h3::before{ background:var(--ko-ink-300); }
+  .stand-card[data-tier="gold"] h3::before{ background:var(--ko-amber); }
+  .stand-card[data-tier="silver"] h3::before{ background:rgba(11,11,18,.35); }
+  .stand-photo{ position:relative; flex:1; min-width:0; height:220px; overflow:hidden; background:#08080c; cursor:pointer; }
   .stand-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
   .stand-nav{ position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px;
     border-radius:50%; border:none; background:rgba(8,8,12,.5); backdrop-filter:blur(4px);
@@ -528,8 +535,11 @@
   .stand-dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:6px; }
   .stand-dots span{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.4); }
   .stand-dots span.on{ background:#fff; }
-  .stand-card h3{ padding:var(--space-4) var(--space-5); font-size:16px; font-weight:var(--fw-semibold); color:#0b0b12; }
-  @media (max-width:700px){ .stand-grid{ grid-template-columns:1fr; } }
+  @media (max-width:700px){
+    .stand-card{ flex-direction:column; }
+    .stand-card h3{ flex:none; padding:var(--space-4) var(--space-5); }
+    .stand-photo{ height:200px; }
+  }
 
   /* ---------- Additional opportunities ---------- */
   .opps{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); }
@@ -1492,41 +1502,41 @@
       <h2><span class="es">Un vistazo a cada categoría.</span><span class="en">A look at each tier.</span></h2>
     </div>
     <div class="stand-grid reveal stagger">
-      <div class="stand-card" data-render="diamond">
+      <div class="stand-card" data-render="diamond" data-tier="diamond">
+        <h3>Stand Diamond</h3>
         <div class="stand-photo">
           <img src="media/stands/diamond-1.jpg" alt="Stand Diamond" loading="lazy" decoding="async">
           <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
           <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
           <div class="stand-dots"></div>
         </div>
-        <h3>Stand Diamond</h3>
       </div>
-      <div class="stand-card" data-render="platinum">
+      <div class="stand-card" data-render="platinum" data-tier="platinum">
+        <h3>Stand Platinum</h3>
         <div class="stand-photo">
           <img src="media/stands/platinum-1.jpg" alt="Stand Platinum" loading="lazy" decoding="async">
           <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
           <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
           <div class="stand-dots"></div>
         </div>
-        <h3>Stand Platinum</h3>
       </div>
-      <div class="stand-card" data-render="goldsilver">
+      <div class="stand-card" data-render="goldsilver" data-tier="gold">
+        <h3>Stand Gold</h3>
         <div class="stand-photo">
           <img src="media/stands/goldsilver-1.jpg" alt="Stand Gold" loading="lazy" decoding="async">
           <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
           <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
           <div class="stand-dots"></div>
         </div>
-        <h3>Stand Gold</h3>
       </div>
-      <div class="stand-card" data-render="goldsilver">
+      <div class="stand-card" data-render="goldsilver" data-tier="silver">
+        <h3>Stand Silver</h3>
         <div class="stand-photo">
           <img src="media/stands/goldsilver-1.jpg" alt="Stand Silver" loading="lazy" decoding="async">
           <button type="button" class="stand-nav prev" aria-label="Anterior">‹</button>
           <button type="button" class="stand-nav next" aria-label="Siguiente">›</button>
           <div class="stand-dots"></div>
         </div>
-        <h3>Stand Silver</h3>
       </div>
     </div>
 
