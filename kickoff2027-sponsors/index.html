@@ -112,9 +112,20 @@
   .eyebrow{ font-size:12px; font-weight:var(--fw-semibold); letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); }
   hr.accent{ height:2px; width:48px; border:0; margin:0 auto var(--space-3); border-radius:var(--radius-pill); background:var(--rule-spectrum); }
 
+  /* ---------- Top-right controls: fullscreen + lang toggle ---------- */
+  .topctrl{ position:fixed; top:var(--space-5); right:var(--space-5); z-index:50; display:flex; align-items:center; gap:8px; }
+  .fs-btn{
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--border-hairline);
+    background:var(--surface-glass); backdrop-filter:blur(18px); color:var(--text-secondary);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:15px; line-height:1;
+    transition:background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
+  }
+  .fs-btn:hover{ color:#fff; background:rgba(255,255,255,.14); }
+  .fs-btn.on-light{ background:rgba(255,255,255,.82); border-color:rgba(11,11,18,.12); color:rgba(11,11,18,.6); box-shadow:0 16px 40px rgba(20,20,40,.18); }
+  .fs-btn.on-light:hover{ color:var(--ko-ink-900); }
+
   /* ---------- Lang toggle ---------- */
   .langtoggle{
-    position:fixed; top:var(--space-5); right:var(--space-5); z-index:50;
     display:flex; gap:2px; border:1px solid var(--border-hairline); border-radius:var(--radius-pill); padding:3px;
     background:var(--surface-glass); backdrop-filter:blur(18px);
   }
@@ -951,7 +962,7 @@
     .hero .logo, .hero .eyebrow, .hero h1, .hero p.lead, .hero .meta, .hero .ctas{
       opacity:1 !important; transform:none !important; transition:none !important;
     }
-    .langtoggle, .sitenav, .to-top, .progress-bar, .lightbox, .tabs, .gallery-link, .tier-hint,
+    .topctrl, .langtoggle, .sitenav, .to-top, .progress-bar, .lightbox, .tabs, .gallery-link, .tier-hint,
     .marquee, .colorfield, .grain, .cf-dots, .videoframe, .sponsor-form .ff, .form-actions,
     .cta-band .btn, .plan-cta{ display:none !important; }
     /* On paper the form can't be used — surface the team's addresses instead. */
@@ -982,9 +993,12 @@
 
 <div class="progress-bar" id="progressBar"></div>
 
-<div class="langtoggle" role="group" aria-label="Idioma / Language">
-  <button type="button" data-set-lang="es" class="active">ES</button>
-  <button type="button" data-set-lang="en">EN</button>
+<div class="topctrl">
+  <button type="button" class="fs-btn" id="fsBtn" title="Pantalla completa / Fullscreen" aria-label="Pantalla completa">⛶</button>
+  <div class="langtoggle" role="group" aria-label="Idioma / Language">
+    <button type="button" data-set-lang="es" class="active">ES</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
 </div>
 
 <nav class="sitenav" id="siteNav" aria-label="Secciones">
@@ -1325,7 +1339,7 @@
     </div>
     <div class="formats reveal stagger">
       <div class="fmt spotlight rank-1">
-        <div class="fmt-thumb"><img src="https://latamconsult-us.github.io/Web/kickoff2027-sponsors/media/2026/masterclass-branding.jpg" alt="Masterclass en el salón principal del Kick Off" loading="lazy" decoding="async"></div>
+        <div class="fmt-thumb"><img src="https://latamconsult-us.github.io/Web/kickoff2027-sponsors/media/2026/masterclass-branding.jpg?v=2" alt="Masterclass en el salón principal del Kick Off" loading="lazy" decoding="async"></div>
         <span class="rank-badge"><span class="rank-n">1</span><span class="es">Máxima exposición</span><span class="en">Widest reach</span></span>
         <span class="tag">Main Hall</span>
         <dt>Masterclass</dt>
@@ -1651,6 +1665,17 @@
 
   var lightEls = ['plano', 'categorias'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
   var langToggle = document.querySelector('.langtoggle');
+  var fsBtn = document.getElementById('fsBtn');
+  if (fsBtn) {
+    if (!document.documentElement.requestFullscreen) {
+      fsBtn.style.display = 'none';
+    } else {
+      fsBtn.addEventListener('click', function () {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      });
+    }
+  }
 
   function onScroll() {
     var h = document.documentElement;
@@ -1673,6 +1698,7 @@
       });
       siteNav.classList.toggle('on-light', onLight);
       if (langToggle) langToggle.classList.toggle('on-light', onLight);
+      if (fsBtn) fsBtn.classList.toggle('on-light', onLight);
     }
 
     /* The section whose top has most recently passed the nav line is the active one. */
